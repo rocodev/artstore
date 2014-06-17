@@ -10,6 +10,7 @@
 #  updated_at     :datetime
 #  token          :string(255)
 #  payment_method :string(255)
+#  aasm_state     :string(255)      default("order_placed")
 #
 
 class Order < ActiveRecord::Base
