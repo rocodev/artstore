@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require bootstrap
  */
 
 .container {
@@ -20,4 +21,25 @@
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 100px;
+}
+
+.product_item {
+	display: inline-block;
+	width: 200px;
+	height: 270px;
+	border: solid 1px gray;
+}
+
+.product_image {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border: solid 1px black;
+	background-color: gray;
+	height: 200px;
+}
+
+.page_title {
+	font-size: 24px;
+	font-weight: bold;
 }

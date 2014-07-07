@@ -1,24 +1,17 @@
-<h3>All Products</h3>
-
+<div class="row">
+	<div class="col-md-4"><span class="page_title">All Products</span><%= link_to "New", new_admin_product_path, :class=> "btn btn-primary", :style => "margin-left: 20px; width: 80px" %><div>
+	<div class="col-md-4"></div>
+</div>
 <% if flash.any? %>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
 <% end %>
 
-<% if !current_user %>
-<p><%= link_to "Sign in", new_user_session_path, :class => "btn btn-default" %> | <%= link_to "Sign up", new_user_registration_path, :class => "btn btn-default" %></p>
-<% else %>
-<p><%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "btn btn-default" %>&nbsp;<%= current_user.email %></p>
-<% end %>
-
-<% if current_user.admin? %>
-<p><%= link_to "New", new_admin_product_path, :class => "tiny button" %></p>
-<% end %>
-
 <hr/>
 <% @product.each do |product| %>
-	<p>Title: <%= product.title %></p>
-	<p>Description: <%= product.description %></p>
-	<p>Quantity: <%= product.quantity %></p>
-	<hr/>
+<div class="product_item">
+	<div class="product_image"></div>
+		<h4 style="text-align:center"><%= product.title %></h4>
+		<p style="text-align:center"><%= product.quantity %> left</p>
+</div>
 <% end %>
