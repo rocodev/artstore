@@ -1,0 +1,8 @@
+<h3>New Products</h3>
+<hr/>
+<%= form_for [:admin, @product] do |f| %>
+	<p>Title: <%= f.text_field :title %></p>
+	<p>Description: <%= f.text_area :description %></p>
+	<p>Quantity: <%= f.text_field :quantity %></p>
+	<p><%= f.submit "Submit" %></p>
+<% end %>

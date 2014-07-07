@@ -1,0 +1,24 @@
+<h3>All Products</h3>
+
+<% if flash.any? %>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<% end %>
+
+<% if !current_user %>
+<p><%= link_to "Sign in", new_user_session_path, :class => "btn btn-default" %> | <%= link_to "Sign up", new_user_registration_path, :class => "btn btn-default" %></p>
+<% else %>
+<p><%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "btn btn-default" %>&nbsp;<%= current_user.email %></p>
+<% end %>
+
+<% if current_user.admin? %>
+<p><%= link_to "New", new_admin_product_path, :class => "tiny button" %></p>
+<% end %>
+
+<hr/>
+<% @product.each do |product| %>
+	<p>Title: <%= product.title %></p>
+	<p>Description: <%= product.description %></p>
+	<p>Quantity: <%= product.quantity %></p>
+	<hr/>
+<% end %>
