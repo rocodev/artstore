@@ -14,9 +14,9 @@
 	</div>
 	<div class="navbar-form navbar-right">
 <% if !current_user %>
-	<%= link_to "Sign in", new_user_session_path, :class => "btn btn-default" %>&nbsp;<%= link_to "Sign up", new_user_registration_path, :class => "btn btn-default", :style => "margin-right: 10px;" %>
+	<%= link_to "登入", new_user_session_path, :class => "btn btn-default" %>&nbsp;<%= link_to "註冊", new_user_registration_path, :class => "btn btn-default", :style => "margin-right: 10px;" %>
 <% else %>
-	<%= current_user.email %>&nbsp;<%= link_to "Sign out", destroy_user_session_path, :method => :delete, :class => "btn btn-default", :style => "margin-right: 10px;" %></p>
+	<%= current_user.email %>&nbsp;<%= link_to "登出", destroy_user_session_path, :method => :delete, :class => "btn btn-default", :style => "margin-right: 10px;" %></p>
 <% end %>
 
 		

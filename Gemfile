@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'simple_form'
 gem 'rmagick', :require => 'RMagick'
 gem 'carrierwave'
 gem 'bootstrap-sass'

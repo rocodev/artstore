@@ -1,6 +1,5 @@
 <div class="row">
-	<div class="col-md-4"><span class="page_title">All Products</span><%= link_to "New", new_admin_product_path, :class=> "btn btn-primary", :style => "margin-left: 20px; width: 80px" %><div>
-	<div class="col-md-4"></div>
+	<div class="col-md-12"><span class="page_title">後台管理</span><%= link_to "新產品", new_admin_product_path, :class=> "btn btn-primary", :style => "margin-left: 20px; width: 80px" %><div>
 </div>
 <% if flash.any? %>
 <p class="notice"><%= notice %></p>
@@ -8,14 +7,20 @@
 <% end %>
 
 <hr/>
+
+<div class="row">
 <% @product.each do |product| %>
-<div class="product_item">
-	<% if product.image_url %>
-	<%= image_tag product.image_url(:thumb).to_s %>
-	<% else %>
-	<div class="product_image"></div>
-	<% end %>
-		<h4 style="text-align:center"><%= product.title %></h4>
-		<p style="text-align:center"><%= product.quantity %> left | <%= link_to "Delete", admin_product_path(product), method: :delete %></p>
+<div class="col-md-3 product_item">
+	<div class="product_image_container">
+		<% if product.image_url %>
+				<%= link_to(image_tag(product.image_url(:thumb).to_s), admin_product_path(product) , class: "product_image") %>
+		<% else %>
+			<div class="product_image_blank"></div>
+		<% end %>
+	</div>
+<h4 style="text-align:center"><%= link_to product.title, admin_product_path(product) %></h4>
+<p style="text-align:center">剩餘 <%= product.quantity %> 件 | <%= link_to "Edit", edit_admin_product_path(product) %> | <%= link_to "Delete", admin_product_path(product), method: :delete, data: {confirm: "確定嗎？"} %></p>
 </div>
+
 <% end %>
+</div>
