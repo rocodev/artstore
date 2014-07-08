@@ -1,0 +1,26 @@
+<div class="row">
+	<div class="col-md-12"><span class="page_title">所有產品</span><div>
+</div>
+<% if flash.any? %>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<% end %>
+
+<hr/>
+
+<div class="row">
+<% @product.each do |product| %>
+<div class="col-md-3 product_item">
+	<div class="product_image_container">
+		<% if product.image_url %>
+				<%= link_to(image_tag(product.image_url(:thumb).to_s), product_path(product) , class: "product_image") %>
+		<% else %>
+			<div class="product_image_blank"></div>
+		<% end %>
+	</div>
+<h4 style="text-align:center"><%= link_to product.title, product_path(product) %></h4>
+<p style="text-align:center">剩餘 <%= product.quantity %> 件</p>
+</div>
+
+<% end %>
+</div>

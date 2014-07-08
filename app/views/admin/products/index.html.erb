@@ -19,7 +19,7 @@
 		<% end %>
 	</div>
 <h4 style="text-align:center"><%= link_to product.title, admin_product_path(product) %></h4>
-<p style="text-align:center">剩餘 <%= product.quantity %> 件 | <%= link_to "Edit", edit_admin_product_path(product) %> | <%= link_to "Delete", admin_product_path(product), method: :delete, data: {confirm: "確定嗎？"} %></p>
+<p style="text-align:center">剩餘 <%= product.quantity %> 件 | <%= link_to "編輯", edit_admin_product_path(product) %> | <%= link_to "刪除", admin_product_path(product), method: :delete, data: {confirm: "確定嗎？"} %></p>
 </div>
 
 <% end %>

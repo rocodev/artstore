@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :products
   end
-
-  root to: "admin/products#index"
+  resources :products
+  root to: "products#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
