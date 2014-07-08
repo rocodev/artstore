@@ -1,0 +1,22 @@
+
+<h2>Creat Product</h2>
+
+  <% if @product.errors.any? %>
+    <div>
+      <h1><%= pluralize(@product.errors.count, "error")%> prohibited this post from being saved:</h1>
+      <ul>
+        <% @product.errors.full_messages.each do |msg|%>
+        <li><%= msg%></li>
+        <%end%>
+      </ul>
+    </div>
+  <%end%>
+<%= simple_form_for [:admin, @product] do |f|%>
+  <%= f.input :title, input_html: { maxlength: 20 }%>
+  <%= f.input :description%>
+  <%= f.input :quantity%>
+  <%= f.input :image%>
+  <%= f.input :price%>
+  <%= f.button :submit%>
+<%end%>
+
