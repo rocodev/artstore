@@ -10,8 +10,12 @@
 <hr/>
 <% @product.each do |product| %>
 <div class="product_item">
+	<% if product.image_url %>
+	<%= image_tag product.image_url(:thumb).to_s %>
+	<% else %>
 	<div class="product_image"></div>
+	<% end %>
 		<h4 style="text-align:center"><%= product.title %></h4>
-		<p style="text-align:center"><%= product.quantity %> left</p>
+		<p style="text-align:center"><%= product.quantity %> left | <%= link_to "Delete", admin_product_path(product), method: :delete %></p>
 </div>
 <% end %>

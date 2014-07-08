@@ -15,7 +15,7 @@ class Admin::ProductsController < ApplicationController
 		
 		if @product.save
 			flash.now[:notice] = "Success"
-			redirect_to "admin/products"
+			redirect_to admin_products_path
 		else
 			render :new
 		end
@@ -33,7 +33,7 @@ class Admin::ProductsController < ApplicationController
 		@product = Product.find(params[:id])
 		if @product.update(product_params)
 			flash.now[:notice] = "Success"
-			redirect_to "admin/products"
+			redirect_to admin_products_path
 		else
 			render :edit
 		end
@@ -42,12 +42,12 @@ class Admin::ProductsController < ApplicationController
 	def destroy
 		@product = Product.find(params[:id])
 		@product.destroy
-		redirect_to "admin/products"
+		redirect_to admin_products_path
 		flash.now[:notice] = "Product deleted"
 	end
 
 	private
 		def product_params
-			params.require(:product).permit(:title, :description, :quantity)
+			params.require(:product).permit(:title, :description, :quantity, :image)
 		end
 end
