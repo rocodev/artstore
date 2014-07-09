@@ -9,6 +9,9 @@
 
       <%= link_to("Artstore", root_path, :class => 'brand' )%>
       <div class="nav-collapse collapse">
+        <ul class="nav">
+          <li><%= link_to("商品後台", admin_products_path )%></li>
+        </ul>
         <p class="nav-account navbar-text pull-right">
             <% if !current_user %>
               <%= link_to "登入", new_user_session_path, :class => 'navbar-link'  %>
@@ -17,8 +20,7 @@
             <% else %>
               <a href=<%=edit_user_registration_path %> class="navbar-link"><strong><%= current_user.email %></strong></a>
               <%= link_to "登出", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
-
-            <% end %>    
+            <% end %>
         </p>
       </div>
     </div>

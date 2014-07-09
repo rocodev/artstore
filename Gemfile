@@ -77,3 +77,4 @@ gem "settingslogic", "~> 2.0.9"
 
 # 圖片上傳功能
 gem 'carrierwave'
+gem 'mini_magick'

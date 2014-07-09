@@ -1,9 +1,3 @@
-<ul>
-<% @products.each do |product| %>
-  <li> <%= link_to(product.title, admin_product_path(product)) %> </li>
-<% end %>
-</ul>
-
 <h2 class="text-center">我的個人後台</h2>
 <h3 class="text-center">商品清單</h3>
 <div class="group">
@@ -14,8 +8,10 @@
   <thead>
     <tr>
       <td> # </td>
+      <td> 照片 </td>
       <td> 名稱 </td>
       <td> 介紹 </td>
+      <td> 價格(新台幣) </td>
       <td> 數量 </td>
       <td> 功能 </td>
     </tr>
@@ -24,8 +20,10 @@
     <% @products.each do |product| %>
     <tr>
       <td> <%= product.id %> </td>
+      <td> <%= link_to(image_tag(product.photo_url(:thumb)), admin_product_path(product)) %> </td>
       <td> <%= link_to(product.title, admin_product_path(product)) %> </td>
       <td> <%= product.description %> </td>
+      <td> <%= product.price %> </td>
       <td> <%= product.quantity %> </td>
       <td> <%= ibutton("Edit", edit_admin_product_path(product), :class => "btn btn-info btn-mini" , :iclass => "icon-pencil") %>
            <%= ibutton("Delete", admin_product_path(product), :class => "btn btn-mini btn-danger", :iclass => "icon-remove", :method => :delete, data: { confirm: "Are you sure?" }  ) %></td>
