@@ -3,9 +3,9 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :products
   end
-  get 'admin/products/' => 'products#index'
-  get 'back_end/' => 'admin/products#new'
-  root 'admin/products#index'
+  match 'admin/products/:action' => 'products#:action', via: [:get, :post]
+  match 'products/:action/:id' => 'products#:action/:id', via: [:get]
+  root 'products#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

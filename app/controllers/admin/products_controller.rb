@@ -1,15 +1,10 @@
 class Admin::ProductsController < ApplicationController
-  before_action :authenticate_user! ,only: :new
-  before_action :admin_required,only: :new
-  before_action :backEndHeaders,only: :new
-  before_action :frontEndHeaders,only: [:index,:show]
+  before_action :authenticate_user!
+  before_action :admin_required
+  before_action :backEndHeaders
 
   def new
     @product = Product.new
-  end
-
-  def show
-    @product = Product.find(params[:id])
   end
 
   def create
@@ -20,10 +15,6 @@ class Admin::ProductsController < ApplicationController
     else
       render :new
     end
-  end
-
-  def index
-    @products = Product.all
   end
 
   private
