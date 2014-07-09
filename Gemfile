@@ -74,3 +74,6 @@ gem "auto-facebook", "0.42"
 gem "embedly", "~> 1.8.0"
 
 gem "settingslogic", "~> 2.0.9"
+
+# 圖片上傳功能
+gem 'carrierwave'
