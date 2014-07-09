@@ -1,0 +1,26 @@
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="susy_container">
+      <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <%= link_to("Artstore", root_path, :class => 'brand' )%>
+      <div class="nav-collapse collapse">
+        <p class="nav-account navbar-text pull-right">
+            <% if !current_user %>
+              <%= link_to "登入", new_user_session_path, :class => 'navbar-link'  %>
+              <%= link_to "註冊", new_user_registration_path, :class => 'navbar-link'  %>
+              <!--<%= link_to("Facebook Login", "#") %>-->       
+            <% else %>
+              <a href=<%=edit_user_registration_path %> class="navbar-link"><strong><%= current_user.email %></strong></a>
+              <%= link_to "登出", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+
+            <% end %>    
+        </p>
+      </div>
+    </div>
+  </div>
+</nav>
