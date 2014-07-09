@@ -1,0 +1,16 @@
+<%= simple_form_for([:admin, @product], html: {class: 'form-horizontal' },defaults: { input_html: { class: 'form-control' }}) do |f| %>
+    <div class="input-group">
+      <%= f.input :title,label: '名稱'%>
+    </div>
+    <div class="input-group">
+      <%= f.input :description, as: :text ,label: '描述'%>
+    </div>
+    <div class="input-group">
+      <%= f.input :quantity ,label: '數量'%>
+    </div>
+    <div class="input-group">
+      <%= f.input :price ,label: '價錢'%>
+    </div>
+    </br>
+    <%= f.button :submit,class: 'btn-primary'%>
+<% end %>
