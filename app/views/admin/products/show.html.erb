@@ -6,6 +6,7 @@
     <h2 class="featurette-heading"><%= @product[:title] %></h2>
     <p class="lead"><%= @product[:description] %></p>
     <p class="lead">數量 : <%= @product[:quantity] %></p>
-    <p class="lead">價錢 : <%= @product[:price] %></p>
+    <p class="lead">價錢 : <span style="color: red;font-size: 2em;">$<%= @product[:price] %></span></p>
+    <a class="btn btn-danger" href="#" style="float: right;">加入購物車</a>
   </div>
 </div>
