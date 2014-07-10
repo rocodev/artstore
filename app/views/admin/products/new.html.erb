@@ -1,0 +1,20 @@
+
+<%= form_for [:admin, @product] do |form| %>
+  <div class="group">
+    <%= form.label("標題")%>
+    <%= form.text_field :title%>
+  </div>
+
+  <div class="group">
+    <%= form.label("敘述")%>
+    <%= form.text_field :description%>
+  </div>
+
+
+  <div class="group">
+    <%= form.label("數量")%>
+    <%= form.text_field :quantity%>
+  </div>
+
+  <%= form.submit "submit", :disable_with=> 'Submiting....'%>
+<%end%>
