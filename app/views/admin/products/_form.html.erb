@@ -1,0 +1,26 @@
+
+
+  <%= f.input :title, :input_html=>{:class => "form-control"}, :wrapper_html=>{ :class => "form-group"} ,:label => "名稱" , :type=>"text"%>
+
+  <%= f.input :description, :input_html=>{:class =>"form-control", :rows=>"8"}, :wrapper_html=>{:class=>"form-group"}, :label=>"商品描述"%>
+
+  <%= f.input :quantity, :input_html=>{:class=>"form-control"}, :wrapper_html=>{:class=>"form-group"}, :label=>"數量" %>
+
+  <hr>
+
+
+  <%= f.simple_fields_for :photos do |photo|%>
+
+  <%= render(:partial=>'photo_fields', :locals=>{:f =>photo}) %>
+  <%end%>
+
+ 
+  <div class="links">
+     </br>
+     <%= link_to_add_association('add photo', f, :photos, {:class=>"btn btn-sm btn-info"})%>
+  </div>
+
+  <hr>
+ 
+
+
