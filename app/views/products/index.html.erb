@@ -1,11 +1,10 @@
-<%= link_to "新增",new_admin_product_path, class: "btn btn-warning"%>
-<br><br>
+
 <%@products.each do |product| %>
   <div class="col-md-4">
     <div class="thumbnail">
       <%= image_tag product.image.url(:sm)%>
       <div class="caption">
-        <h3><%= link_to product.title,admin_product_path(product) %></h3>
+        <h3><%= link_to product.title,product_path(product) %></h3>
         <p><%= product.description %></p>
         <p>數量: <%= product.quantity %> </p>
       </div>
