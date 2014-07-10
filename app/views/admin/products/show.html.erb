@@ -1,0 +1,16 @@
+<%= link_to "回清單",admin_products_path, class: "btn btn-primary"%>
+<br><br>
+<div class="row">
+  <div class="col-md-5">
+<%= image_tag @product.image.url(:sm)%>
+  </div>
+  <div class="col-md-7">
+  這是[<%= @product.title  %>]<br>
+  <%= @product.description  %><br>
+  數量:<%= @product.quantity  %><br>
+  </div>
+</div>
+
+
+  
+

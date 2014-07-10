@@ -1,0 +1,17 @@
+
+<%@products.each do |product| %>
+  <div class="col-md-4">
+    <div class="thumbnail">
+      <%= image_tag product.image.url(:sm)%>
+      <div class="caption">
+        <h3><%= link_to product.title,product_path(product) %></h3>
+        <p><%= product.description %></p>
+        <p>數量: <%= product.quantity %> </p>
+      </div>
+    </div>
+  </div>
+
+<% end %>
+
+
+
