@@ -1,3 +1,10 @@
+作業0:
+ ✔ 寫後台的 User Story @done (14-07-10 15:56)
+ ☐ 實作圖⽚片上傳 carrierwave
+ ✔ 用 Bootstrap 做⼀一個「有 Nav bar 」的 layout @done (14-07-10 15:56)
+ ☐ 使用 simple_form 換掉 form
+ ☐ products/show, products,index 也請實作
+
 作業1:
  ☐ 清空購物⾞
  ☐ 從購物⾞內刪掉某些物品
@@ -46,18 +53,18 @@ Admin 管理訂單:
   ☐ 身為商家，當消費者確定購物結帳後，該商品的庫存必須按照數量減少
 
 layou:
-  ☐ 找個版面安裝
+  ✔ 找個版面安裝 @done (14-07-10 15:53)
 
 Admin:
-  ☐ Admin Should able to see admin panel link in dropdown menu
+  ✔ Admin Should able to see admin panel link in dropdown menu @done (14-07-10 15:53)
     Product:
       ☐ Refine with Product List with table
       ☐ should able update image when create product
       ☐ should able to upload image after update
 
 其他:
- ☐ 套 Bootstrap 版
-   ☐  Login / Logout using bootstrap nav
+ ✔ 套 Bootstrap 版 @done (14-07-10 15:46)
+   ✔  Login / Logout using bootstrap nav @done (14-07-10 15:53)
    ☐ SimpleForm with Bootstrap
  ☐ 安裝 Carrierwave
  ☐ Search function ( using Ransack )
@@ -78,8 +85,8 @@ Admin:
 
 
 任何使用者都要能看到首頁:
-  ☐ 首頁應該要能夠看到所有商品
-  ☐ 任何使用者都要能看到首頁
+  ✔ 首頁應該要能夠看到所有商品 @done (14-07-10 15:53)
+  ✔ 任何使用者都要能看到首頁 @done (14-07-10 15:53)
 
 
 
