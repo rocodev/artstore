@@ -1,0 +1,94 @@
+作業1:
+ ☐ 清空購物⾞
+ ☐ 從購物⾞內刪掉某些物品
+ ☐ 購物⾞加⼊「數量」設計
+ ☐ 購物⾞的總價 => ⼩計 x 數量
+ ☐ 數量為 0 的貨物不能「購買」
+
+作業2:
+ ☐ 配合作業 #1 ⽀援「多重購買數量」
+ ☐ 並修改訂單畫⾯ 
+ ☐ 訂單畫⾯美化
+
+作業3:
+ ☐ 建⽴ account/orders 可以看到該使⽤者過去所有訂單
+ ☐ 結賬後跳轉到 account/orders#index
+
+
+作業4:
+ ☐ 建⽴ admin/orders 可以看到系統內所有訂單
+ ☐ admin 的 order 列表應要能顯⽰訂單狀態
+ ☐ 單張 order 應要可以要「按照狀態圖」改變狀態
+
+作業5:
+ ☐ 信⽤卡付款成功也要寄信通知
+ ☐ 消費者可以透過 email 裡的連結檢視原先的 order
+
+作業6:
+ ☐ 安裝 Settingslogic
+ ☐ 把 key 放到 SettingsLogic 的 yml 裡面
+ ☐ 把 mailgun 的 key 放到 SettingLogic 裡面
+
+作業7:
+ ☐ 把 app/controller/card_charges_controllers 收納成 service object
+ ☐ 安裝 gem Ransack 實做搜尋功能
+
+購物: 
+ ☐ 身為消費者，我要在前台能夠找到商品並加到購物車
+ ☐ 身為消費者，我要在前台能夠將多樣商品加到購物車，並生成一張訂單
+ ☐ 身為消費者，當系統生成一張訂單後，我可以填寫寄送資訊，並且用信用卡結帳
+ ☐ 身為消費者，當我用信用卡結帳後，我的信箱要能收到一張訂單確認信
+
+Admin 管理訂單:
+  ☐ 身為管理者，可以在後台看訂單，訂單狀態分為未結帳、已結帳、出貨中、已出貨、辦理退貨
+  ☐ 身為管理者，我可以在後台對單張訂單做狀態改變
+  ☐ 身為管理者，當我在將商品設為已出貨時，消費者應該收到一張已出貨的通知信
+  ☐ 身為商家，當消費者確定購物結帳後，該商品的庫存必須按照數量減少
+
+layou:
+  ☐ 找個版面安裝
+
+Admin:
+  ☐ Admin Should able to see admin panel link in dropdown menu
+    Product:
+      ☐ Refine with Product List with table
+      ☐ should able update image when create product
+      ☐ should able to upload image after update
+
+其他:
+ ☐ 套 Bootstrap 版
+   ☐  Login / Logout using bootstrap nav
+   ☐ SimpleForm with Bootstrap
+ ☐ 安裝 Carrierwave
+ ☐ Search function ( using Ransack )
+ ☐ 尋找 Ruby Arrat 的 inject method 的用法
+
+
+身為商家的管理者，我要能夠在後台上架我的東西，並設定能夠販賣:
+ ✔ 管理者必須要有一個後台 @done (14-07-10 13:13)
+ ✔ 後台必須要可以新增產品 @done (14-07-10 13:38)
+ ✔ 產品內容必須要有標題、文字、數量 @done (14-07-10 13:38)
+ ☐ 產品必須要有價格
+ ☐ 產品內容必須要有圖片
+
+身為商家的管理者，我要能夠在後台設定權限，權限分成管理者以及消費者:
+   ✔ 身為管理者，才可以進入後台 @done (14-07-10 13:43)
+   ✔ 身為管理者，必須要登入且是 admin @done (14-07-10 13:43)
+   ✔ 管理者身份必須要被分為 admin / user @done (14-07-10 13:43)
+
+
+任何使用者都要能看到首頁:
+  ☐ 首頁應該要能夠看到所有商品
+  ☐ 任何使用者都要能看到首頁
+
+
+
+任何使用者都要能看到產品頁:
+ ☐ 產品頁應該能要看到標題
+ ☐ 產品頁應該要能看到敘述
+ ☐ 產品頁應該要能看到圖片
+
+有空想做的:
+ ☐ 重新整理登入 / 登出畫面
+ ☐ 加入 Facebook Login
+
