@@ -1,3 +1,5 @@
 class Product < ActiveRecord::Base
-  mount_uploader :image , ImagicUploader
+  mount_uploader :image , ImageUploader
+  
+
 end
