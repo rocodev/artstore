@@ -1,0 +1,27 @@
+<h2>Product Listing</h2>
+
+
+
+  
+  <div class="row">
+  	<% @products.each do |product|%>
+  	<div class="col-xs-6 col-md-3">
+  		<%= link_to(admin_product_path(product),:class => "thumbnail") do%>
+  		  <%= image_tag product.image.thumb.url %>
+  		  <div class="text-center"><h3><%= product.title %></h3></div>
+  		<%end%>
+  		<%= button_to "Delete", admin_product_path(product), :method => "delete", :class => "btn btn-mini"%>
+  	</div>
+    <%end%>
+  </div>
+  
+
+
+<%if current_user %>
+	<div>
+	  <%if current_user.is_admin? %>	
+	    <%= link_to "New Product", new_admin_product_path, :class => "btn btn-primary"%>
+	  <%end%>
+	</div>
+<%end%>
+<%= will_paginate @products%>
