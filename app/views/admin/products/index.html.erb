@@ -5,6 +5,7 @@
     <td>Title</td>
     <td>Description</td>
     <td>Quantity</td>
+    <td>Image]</td>
   </tr>
 </thead>
   <%@products.each do |product| %>
@@ -13,6 +14,7 @@
     <td><%= product.title %></td>
     <td><%= product.description %></td>
     <td><%= product.quantity %></td>
+    <td><%= product.image.url.to_s%></td>
   </tr>
 </tbody>
 <% end %>

@@ -16,5 +16,10 @@
     <%= form.text_field :quantity%>
   </div>
 
+    <div class="group">
+    <%= form.label("上傳")%>
+    <%= form.file_field :image%>
+  </div>
+
   <%= form.submit "submit", :disable_with=> 'Submiting....'%>
 <%end%>
