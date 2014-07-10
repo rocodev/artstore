@@ -1,0 +1,13 @@
+<div class="col-md-4">
+  <%= image_tag @product.image_url.to_s %>
+</div>
+<div class="col-md-4">
+  <h1><%= @product.title %></h1>
+  <p><%= @product.description %></p>
+  <p>數量: <%= @product.quantity %></p>
+  <p>價格:</p>
+  
+</div>
+<div class="col-md-4">
+  <button class="btn btn-danger btn-lg">加入購物車</button>
+</div>

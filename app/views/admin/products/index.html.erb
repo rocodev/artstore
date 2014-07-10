@@ -1,0 +1,29 @@
+<div class="group">
+  <%= link_to("New Product", new_admin_product_path, :class => "btn btn-primary btn-sm") %>
+</div>
+
+<table class="table">
+  <thead>
+    <tr class="active">
+      <td>標題</td>
+      <td>敘述</td>
+      <td>數量</td>
+      <td>圖片</td>
+      <td>修改</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |p| %>
+    <tr>
+      <td><%= link_to(p.title, admin_product_path(p)) %></td>
+      <td><%= p.description %></td>
+      <td><%= p.quantity %></td>
+      <td><%= image_tag p.image_url(:thumb).to_s %></td>
+      <td>
+        <%= link_to("修改", edit_admin_product_path(p), :class => "btn btn-default") %>
+        <%= link_to("刪除", admin_product_path(p), method: :delete, data: { confirm: '你確定要刪除嗎？' } ) %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

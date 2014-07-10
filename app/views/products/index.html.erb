@@ -1,0 +1,21 @@
+
+<table class="table">
+  <thead>
+    <tr class="active">
+      <td>標題</td>
+      <td>敘述</td>
+      <td>數量</td>
+      <td>圖片</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |p| %>
+    <tr>
+      <td><%= link_to(p.title, product_path(p)) %></td>
+      <td><%= p.description %></td>
+      <td><%= p.quantity %></td>
+      <td><%= image_tag p.image_url(:thumb).to_s %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
