@@ -3,7 +3,7 @@
  ✔ 實作圖⽚片上傳 carrierwave @done (14-07-10 17:26)
  ✔ 用 Bootstrap 做⼀一個「有 Nav bar 」的 layout @done (14-07-10 15:56)
  ✔ 使用 simple_form 換掉 form @done (14-07-10 17:04)
- ☐ products/show, products,index 也請實作
+ ✔ products/show, products,index 也請實作 @done (14-07-10 17:58)
 
 作業1:
  ☐ 清空購物⾞
@@ -58,15 +58,15 @@ layou:
 Admin:
   ✔ Admin Should able to see admin panel link in dropdown menu @done (14-07-10 15:53)
     Product:
-      ☐ Refine with Product List with table
-      ☐ should able update image when create product
-      ☐ should able to upload image after update
+      ✔ Refine with Product List with table @done (14-07-10 17:58)
+      ✔ should able update image when create product @done (14-07-10 17:58)
+      ✔ should able to upload image after update @done (14-07-10 17:58)
 
 其他:
  ✔ 套 Bootstrap 版 @done (14-07-10 15:46)
    ✔  Login / Logout using bootstrap nav @done (14-07-10 15:53)
    ✔ SimpleForm with Bootstrap @done (14-07-10 17:05)
- ☐ 安裝 Carrierwave
+ ✔ 安裝 Carrierwave @done (14-07-10 17:58)
  ☐ Search function ( using Ransack )
  ☐ 尋找 Ruby Arrat 的 inject method 的用法
 
@@ -76,7 +76,7 @@ Admin:
  ✔ 後台必須要可以新增產品 @done (14-07-10 13:38)
  ✔ 產品內容必須要有標題、文字、數量 @done (14-07-10 13:38)
  ☐ 產品必須要有價格
- ☐ 產品內容必須要有圖片
+ ✔ 產品內容必須要有圖片 @done (14-07-10 17:58)
 
 身為商家的管理者，我要能夠在後台設定權限，權限分成管理者以及消費者:
    ✔ 身為管理者，才可以進入後台 @done (14-07-10 13:43)
@@ -91,9 +91,9 @@ Admin:
 
 
 任何使用者都要能看到產品頁:
- ☐ 產品頁應該能要看到標題
- ☐ 產品頁應該要能看到敘述
- ☐ 產品頁應該要能看到圖片
+ ✔ 產品頁應該能要看到標題 @done (14-07-10 17:59)
+ ✔ 產品頁應該要能看到敘述 @done (14-07-10 17:59)
+ ✔ 產品頁應該要能看到圖片 @done (14-07-10 17:59)
 
 有空想做的:
  ☐ 重新整理登入 / 登出畫面
