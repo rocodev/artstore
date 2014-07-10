@@ -14,5 +14,15 @@
 		<%= f.label("數量") %>
 		<%= f.text_field :quantity %>
 	</div>		
+
+
+	<div class="group">
+		<%= f.label("圖片") %>
+		<%= f.file_field :image %>
+	</div>		
+
+
+
+
 	<%= f.submit "Submit", :disable_with => 'Submitting' %>
 <% end %>
