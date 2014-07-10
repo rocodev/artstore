@@ -1,0 +1,21 @@
+<divclass="span12"> <div class="group">
+<%= link_to("New Product", new_admin_product_path , :class => "btn btn-mini btn-primary pull-right") %>
+</div>
+<table class="table">
+<thead> <tr>
+<td> # </td>
+<td> Title </td>
+<td> Descroption </td>
+      </tr>
+    </thead>
+<tbody>
+<% @products.each do |product| %> <tr>
+<td> # </td>
+<td> <%= link_to(product.title, admin_product_path(product)) %> </td>
+<td> <%= product.description %> </td>
+<td> <%= link_to("Edit", edit_admin_product_path(product), :class => "btn btn-mini")%>
+<%= link_to("Delete", admin_product_path(product), :class => "btn btn-mini", :method=>:delete,:confirm=>"Are you sure?")%>
+</td> </tr>
+<% end %> </tbody>
+ </table>
+</div>
