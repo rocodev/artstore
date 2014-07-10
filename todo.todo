@@ -2,7 +2,7 @@
  ✔ 寫後台的 User Story @done (14-07-10 15:56)
  ☐ 實作圖⽚片上傳 carrierwave
  ✔ 用 Bootstrap 做⼀一個「有 Nav bar 」的 layout @done (14-07-10 15:56)
- ☐ 使用 simple_form 換掉 form
+ ✔ 使用 simple_form 換掉 form @done (14-07-10 17:04)
  ☐ products/show, products,index 也請實作
 
 作業1:
@@ -65,7 +65,7 @@ Admin:
 其他:
  ✔ 套 Bootstrap 版 @done (14-07-10 15:46)
    ✔  Login / Logout using bootstrap nav @done (14-07-10 15:53)
-   ☐ SimpleForm with Bootstrap
+   ✔ SimpleForm with Bootstrap @done (14-07-10 17:05)
  ☐ 安裝 Carrierwave
  ☐ Search function ( using Ransack )
  ☐ 尋找 Ruby Arrat 的 inject method 的用法
