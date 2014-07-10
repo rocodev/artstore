@@ -1,6 +1,6 @@
 作業0:
  ✔ 寫後台的 User Story @done (14-07-10 15:56)
- ☐ 實作圖⽚片上傳 carrierwave
+ ✔ 實作圖⽚片上傳 carrierwave @done (14-07-10 17:26)
  ✔ 用 Bootstrap 做⼀一個「有 Nav bar 」的 layout @done (14-07-10 15:56)
  ✔ 使用 simple_form 換掉 form @done (14-07-10 17:04)
  ☐ products/show, products,index 也請實作
