@@ -13,6 +13,11 @@
     <div class="input-group">
       <%= f.input :price ,label: '價錢'%>
     </div>
+    <div class="input-group">
+      <%= f.simple_fields_for :photos do |c| %>
+          <%= c.input :image , :as => :file %>
+      <% end %>
+    </div>
     </br>
     <%= f.button :submit,class: 'btn-primary'%>
 <% end %>

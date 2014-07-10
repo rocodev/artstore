@@ -4,7 +4,7 @@
 <div class="row marketing">
   <% @products.each{ |product| %>
       <div class="col-lg-4">
-        <img class="img" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+        <img class="img" src="<%= product.getThumb %>" alt="Generic placeholder image" style="width: 140px; height: 140px;">
         <h2><%= product[:title] %></h2>
         <p><%= product[:description] %></p>
         <p>
