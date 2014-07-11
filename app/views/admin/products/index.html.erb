@@ -1,7 +1,7 @@
-<%= link_to "新增",new_admin_product_path, class: "btn btn-warning"%>
+<%= link_to "新增產品",new_admin_product_path, class: "btn btn-warning" , style: 'margin-left: 14px;' %>
 <br><br>
 <%@products.each do |product| %>
-  <div class="col-md-4">
+  <div class="col-md-3">
     <div class="thumbnail">
       <%= image_tag product.image.url(:sm)%>
       <div class="caption">
@@ -9,6 +9,7 @@
         <p><%= product.description %></p>
         <p>數量: <%= product.quantity %> </p>
         <p>價格: <%= product.price %> </p>
+        <%= link_to "修改",edit_admin_product_path(product),:class=>'btn btn-primary' %>
         <%= link_to "刪除",admin_product_path(product),:method=> :delete,:class=>'btn btn-danger' ,:confirm=> 'are you Sure!' %>
       </div>
     </div>
