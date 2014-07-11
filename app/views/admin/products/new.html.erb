@@ -27,6 +27,13 @@
   </div>
 
 
+  <div class="form-group">
+    
+    <div class="col-md-6">
+      <%= f.input :price %>
+    </div>
+  </div>
+
   <%= f.simple_fields_for :photos do |c| %>
       <%= c.input :image , :as => :file %>
   <% end %>
