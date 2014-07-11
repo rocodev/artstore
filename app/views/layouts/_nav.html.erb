@@ -26,7 +26,7 @@
               <ul class="dropdown-menu" role="menu">
                  <%if current_user.blank?%>
                   <li><%= link_to "登入", new_user_session_path %></li>
-                  <li><%= link_to "註冊", user_registration_path %></li>
+                  <li><%= link_to "註冊", new_user_registration_path %></li>
                   <% else %>
                   <li><%= link_to "後台", admin_products_path%></li>
                   <li><%= link_to "登出", destroy_user_session_path, :method=> :delete%></li>
