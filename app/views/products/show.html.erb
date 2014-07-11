@@ -1,0 +1,19 @@
+
+<%= link_to "回清單",products_path, class: "btn btn-primary"%>
+<br><br>
+<div class="row">
+  <div class="col-md-7">
+    <%= image_tag @product.image.url(:md)%>
+  </div>
+  <div class="col-md-5">
+  <h3><%= @product.title  %></h3>
+  <%= @product.description  %><br><br><br>
+  數量:<%= @product.quantity  %><br>
+  <h2 style='color: red'><strong>$ 45,000</strong></h2>
+    <%= link_to "加入購物車","xxxx", class: "btn btn-danger" %>
+  </div>
+</div>
+
+
+  
+
