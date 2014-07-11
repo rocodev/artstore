@@ -1,0 +1,19 @@
+<div class="col-sm-6 col-md-4">
+  <div class="thumbnail">
+    <%= link_to admin_product_path(product) do %>
+    <%= image_tag product.photos.first.image %>
+    <% end %>
+    <div class="caption">
+      <h3><%= product.title %></h3>
+      <p><%= product.description %></p>
+      <p>數量：<%= product.quantity %></p>
+      <% unless product.for_sale %>
+        <p><span class="label label-danger">未上架</span><p>
+      <% end %>
+    </div>
+    <div class="modal-footer">
+        <%= link_to "修改", edit_admin_product_path(product), :class => "btn btn-default" %>
+        <%= link_to "刪除", admin_product_path(product),method: :delete ,:class => "btn btn-warning", :disable_with => 'Submiting...' %>
+    </div>  
+  </div>
+</div>
