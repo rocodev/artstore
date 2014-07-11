@@ -1,0 +1,9 @@
+<%= simple_form_for [:admin, @product] do |form| %>
+  <%= form.input :title,required: true,input_html: { class: 'form-control' },label:'標題' %>
+  <%= form.input :description,required: true,label:'敘述',input_html: { class: 'form-control' } %>
+  <%= form.input :quantity,required: true,input_html: { class: 'form-control',size: 20 },label:'數量' %>
+  <%= form.input :price,required: true,input_html: { class: 'form-control' },label:'價格' %>
+  <%= form.input :image,label:'上傳'%>
+  <br>
+  <%= form.submit "submit", :disable_with=> 'Submiting....', class: 'btn btn-info'%>
+<%end%>
