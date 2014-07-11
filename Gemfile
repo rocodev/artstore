@@ -14,8 +14,13 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
+#外觀和使用者認證
 gem 'devise'
 gem 'bootstrap-sass'
+
+#圖片上傳
+gem 'carrierwave'
+gem 'mini_magick'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

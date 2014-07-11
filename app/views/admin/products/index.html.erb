@@ -4,5 +4,7 @@
 <%= product.title %>
 <%= product.description %>
 <%= product.quantity %>
+<%= image_tag product.image_url.to_s %>
+<%= image_tag product.image_url(:thumb).to_s %>
 
 <% end %>

@@ -1,22 +1,41 @@
-<%= form_for [:admin, @product] do |f| %>
- 
-  <div class="group">
-    <%= f.label("標題") %>
-    <%= f.text_field :title %>
+<h1>新增商品界面</h1>
+
+<hr>
+
+
+<div class="row">
+  <div class="span8">
+    <%= form_for [:admin, @product] do |f| %>
+     
+      <div class="group">
+        <%= f.label("標題") %>
+        <%= f.text_field :title %>
+      </div>
+      
+      <div class="group">
+        <%= f.label("敘述") %>
+        <%= f.text_area :description %>
+      </div>
+      
+      <div class="group">
+        <%= f.label("數量") %>
+        <%= f.text_field :quantity %>
+      </div>
+
+      <div class="group">
+        <%= f.label("圖片") %>
+        <%= f.file_field :image %>
+      </div>
+      
+      
+      <%= f.submit "送出", :disable_with => 'Submiting...', class: "btn btn-primary"  %>
+     
+     
+    <% end %>
+
   </div>
-  
-  <div class="group">
-    <%= f.label("敘述") %>
-    <%= f.text_area :description %>
-  </div>
-  
-  <div class="group">
-    <%= f.label("數量") %>
-    <%= f.text_field :quantity %>
-  </div>
-  
-  
-  <%= f.submit "Submit", :disable_with => 'Submiting...' %>
- 
- 
-<% end %>
+</div>
+
+  <hr>
+
+
