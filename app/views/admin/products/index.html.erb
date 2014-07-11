@@ -8,6 +8,7 @@
         <h3><%= link_to product.title,admin_product_path(product) %></h3>
         <p><%= product.description %></p>
         <p>數量: <%= product.quantity %> </p>
+        <%= link_to "刪除",admin_product_path(product),:method=> :delete,:class=>'btn btn-danger' ,:confirm=> 'are you Sure!' %>
       </div>
     </div>
   </div>
