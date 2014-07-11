@@ -13,9 +13,8 @@
 
     <%= render "common/navbar" %>
 
-   <% if !alert.blank? %>
-<div class="alert"><%= alert %></div>
-<% end %>
+    <%= notice_message  %>
+
     <%= yield %>
 
   </div>
