@@ -15,9 +15,11 @@ Rails.application.routes.draw do
 
   resources :carts do
     collection do
-      post :checkout
+      post :checkou
     end
   end
+
+  resources :orders
 
 
 end
