@@ -13,7 +13,11 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-
+        <li> 
+          <%= link_to "#" do  %> <%# carts_path %>
+            購物車 <i class="glyphicon glyphicon-shopping-cart"> </i> ( 0<%# cart_items_count(current_cart) %> )
+          <% end %>
+        </li>
         <% if !current_user %>
         <li> <%= link_to("登入", new_user_session_path) %> </li>
         <% else %>
