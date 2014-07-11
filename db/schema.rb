@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140711081927) do
+ActiveRecord::Schema.define(version: 20140711092301) do
 
   create_table "cars", force: true do |t|
     t.datetime "created_at"
@@ -52,12 +52,15 @@ ActiveRecord::Schema.define(version: 20140711081927) do
   create_table "orders", force: true do |t|
     t.integer  "user_id"
     t.integer  "total"
-    t.boolean  "paid",       default: false
+    t.boolean  "paid",           default: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "token"
+    t.string   "payment_method"
+    t.string   "aasm_state",     default: "order_placed"
   end
 
+  add_index "orders", ["aasm_state"], name: "index_orders_on_aasm_state"
   add_index "orders", ["token"], name: "index_orders_on_token"
 
   create_table "photos", force: true do |t|
