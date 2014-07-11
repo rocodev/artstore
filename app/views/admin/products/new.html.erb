@@ -2,39 +2,13 @@
 
 <hr>
 
-
-<div class="row">
-  <div class="span8">
-    <%= form_for [:admin, @product] do |f| %>
-     
-      <div class="group">
-        <%= f.label("標題") %>
-        <%= f.text_field :title %>
-      </div>
-      
-      <div class="group">
-        <%= f.label("敘述") %>
-        <%= f.text_area :description %>
-      </div>
-      
-      <div class="group">
-        <%= f.label("數量") %>
-        <%= f.text_field :quantity %>
-      </div>
-
-      <div class="group">
-        <%= f.label("圖片") %>
-        <%= f.file_field :image %>
-      </div>
-      
-      
-      <%= f.submit "送出", :disable_with => 'Submiting...', class: "btn btn-primary"  %>
-     
-     
-    <% end %>
-
-  </div>
-</div>
+  <%= simple_form_for [:admin, @product] do |f| %>
+    <%= f.input :title, label: '商品名' %>
+    <%= f.input :description, label: '敘述'  %>
+    <%= f.input :quantity, label: '數量'  %>
+    <%= f.input :image, label: '圖片上傳'  %>
+    <%= f.button :submit %>
+  <% end %>
 
   <hr>
 
