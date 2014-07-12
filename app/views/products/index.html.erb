@@ -1,0 +1,23 @@
+<divclass="span12">
+
+<div class="page-header">
+  <h1>Shopping Mall <small>test</small></h1>
+</div>
+
+<% @products.each do |product| %> 
+
+<div class="row">
+  <div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <%= image_tag product.image_url(:thumb).to_s %>
+      <div class="caption">
+        <h3><%= link_to(product.title, product_path(product)) %></h3>
+        <p>商品描述：<%= product.description %></p>
+        <p>商品價格:<%= product.price %></p>
+        <p>商品數量:<%= product.quantity %></p>
+        <p><%= link_to("商品內容", product_path(product), class: "btn btn-default") %> <a href="#" class="btn btn-primary" role="button">加入購物車</a> 
+    </div>
+  </div>
+</div>
+
+<% end %> 

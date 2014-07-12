@@ -1,0 +1,15 @@
+
+<div class="page-header">
+  <h1>Product Info</h1>
+</div>
+
+<div class="col-md-4">
+  <%= image_tag @product.image_url.to_s %>
+</div>
+<div class="col-md-4">
+  <h1><%= @product.title %></h1>
+  <p><%= @product.description %></p>
+  <p>數量: <%= @product.quantity %></p>
+  <p>價格: <%= @product.price %></p>
+  <p><button class="btn btn-primary btn-lg">加入購物車</button></p>
+</div>
