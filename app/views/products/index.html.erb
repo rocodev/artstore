@@ -1,0 +1,15 @@
+<divclass="span12">
+<table class="table">
+
+<tbody>
+<% @products.each do |product| %> 
+<div>
+	<%= image_tag product.image_url(:thumb).to_s %>
+	<br>
+	<%= link_to(product.title, product_path(product)) %>
+	<br>
+	<%= product.price %>
+	<br>
+</div>
+<% end %> 
+</div>
