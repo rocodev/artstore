@@ -1,10 +1,29 @@
-<%= simple_form_for @product, :url => admin_product_path do |f| %>
-  <%= f.input :title, label: '標題' %>
-  <%= f.input :description, as: :text , label: '描述' %>
-  <%= f.input :quantity, label: '數量' %>
-  <%= f.input :price, label: '價格' %>
-  <%= f.input :image, as: :file , label: '圖片' %>
-  <%= f.button :submit %>
+  
+<div class="page-header">
+  <h1>Product Edit</h1>
+</div>
+
+  <div class="container col-md-4 col-md-offset-1">
+
+  	<%= simple_form_for @product, :url => admin_product_path, :html=> {  role: 'form' } do |f| %>
+    	<p>
+    	<%= f.input :title, autofocus: true, label: '商品名稱', input_html: { class: 'form-control', required: true  } %>
+    	</p>
+  		<p>
+  		<%= f.input :description, as: :text , label: '商品描述', input_html: { class: 'form-control', required: true  } %>
+    	</p>
+    	<p>
+    	<%= f.input :quantity,autofocus: true, label: '商品數量', input_html: { class: 'form-control', required: true  } %>
+     	</p>
+     	<p>
+     	<%= f.input :price, autofocus: true, label: '商品價格', input_html: { class: 'form-control', required: true  } %>
+     	</p>
+     	<p>
+        <%= f.input :image, as: :file , label: '商品圖片' %>
+        <br>	
+        <%= image_tag @product.image_url(:thumb).to_s %>
+        </p>
+        <%= f.submit "Submit", :class => "btn btn-lg btn-primary btn-block"  %>
+    </div>
+
 <% end %>
-
-

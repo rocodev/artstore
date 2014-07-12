@@ -1,15 +1,21 @@
-<divclass="span12"> <div class="group">
+
+<div class="page-header">
+  <h1>Product List</h1>
+</div>
+
+<div class="span12"> 
+<div class="group">
 <%= link_to("New Product", new_admin_product_path , :class => "btn btn-mini btn-primary pull-right") %>
 </div>
 <table class="table">
 <thead> 
 	<tr>
 		<td> # </td>
-		<td> 標題 </td>
-		<td> 描述 </td>
-		<td> 庫存 </td>
-		<td> 單價 </td>
-		<td> 縮圖 </td>
+		<td> 商品名稱 </td>
+		<td> 商品描述 </td>
+		<td> 商品數量 </td>
+		<td> 商品價格 </td>
+		<td> 商品縮圖 </td>
 		<td> 操作 </td>
 	</tr>
 </thead>

@@ -1,31 +1,26 @@
-<%= form_for [:admin, @product] do |f| %>
 
-	<div class="group">
-		<%= f.label("標題") %>
-		<%= f.text_field :title %>
-	</div>
+<div class="page-header">
+  <h1>Product New</h1>
+</div>
+  <div class="container col-md-4 col-md-offset-1">
 
-	<div class="group">
-		<%= f.label("敘述") %>
-		<%= f.text_area :description %>
-	</div>
+  	<%= simple_form_for [:admin, @product],:html=> {  role: 'form' } do |f| %>
+    	<p>
+    	<%= f.input :title, autofocus: true, label: '商品名稱', input_html: { class: 'form-control', required: true  } %>
+    	</p>
+  		<p>
+  		<%= f.input :description, as: :text , label: '商品描述', input_html: { class: 'form-control', required: true  } %>
+    	</p>
+    	<p>
+    	<%= f.input :quantity,autofocus: true, label: '商品數量', input_html: { class: 'form-control', required: true  } %>
+     	</p>
+     	<p>
+     	<%= f.input :price, autofocus: true, label: '商品價格', input_html: { class: 'form-control', required: true  } %>
+     	</p>
+     	<p>
+        <%= f.input :image, as: :file , label: '商品圖片' %>
+        </p>
+        <%= f.submit "Submit", :class => "btn btn-lg btn-primary btn-block"  %>
+    </div>
 
-	<div class="group">
-		<%= f.label("數量") %>
-		<%= f.text_field :quantity %>
-	</div>		
-	<div class="group">
-		<%= f.label("價格") %>
-		<%= f.text_field :price %>
-	</div>
-
-	<div class="group">
-		<%= f.label("圖片") %>
-		<%= f.file_field :image %>
-	</div>		
-
-
-
-
-	<%= f.submit "Submit", :disable_with => 'Submitting' %>
 <% end %>
