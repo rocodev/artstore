@@ -2,9 +2,14 @@ Rails.application.routes.draw do
 
   devise_for :users
   namespace :admin do
-    resources :products
+    resources :products do
+      member do
+        get :change_default_image
+        delete :destroy_image
+      end
+    end
   end
-  resources :products
+  resources :products 
   root to: "products#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

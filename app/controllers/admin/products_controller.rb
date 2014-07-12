@@ -48,6 +48,13 @@ class Admin::ProductsController < ApplicationController
 		flash.now[:notice] = "Product deleted"
 	end
 
+	def destroy_image
+		@image = Image.find(params[:id])
+		@product = @image.product
+		@image.destroy
+		redirect_to admin_product_path(@product)
+	end
+
 	private
 		def product_params
 			params.require(:product).permit(:title, :description, :quantity, :price, :images_attributes => [:image])

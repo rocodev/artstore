@@ -30,7 +30,8 @@
 	<div class="row">
 		<% @image.each do |i| %>
 		<div class="col-md-3">
-			<%= image_tag i.image_url(:thumb).to_s %>
+			<p><%= image_tag i.image_url(:thumb).to_s %></p>
+			<p><%= link_to "刪除商品", destroy_image_admin_product_path(i), method: :delete %></p>
 		</div>
 		<% end %>
 	</div>
