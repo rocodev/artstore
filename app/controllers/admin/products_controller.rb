@@ -8,6 +8,7 @@ class Admin::ProductsController < ApplicationController
 
 	def new
 		@product = Product.new
+		@image = @product.images.new
 	end
 
 	def create
@@ -23,6 +24,7 @@ class Admin::ProductsController < ApplicationController
 
 	def show
 		@product = Product.find(params[:id])
+		@image = @product.images.all
 	end
 
 	def edit
@@ -48,6 +50,6 @@ class Admin::ProductsController < ApplicationController
 
 	private
 		def product_params
-			params.require(:product).permit(:title, :description, :quantity, :image, :price)
+			params.require(:product).permit(:title, :description, :quantity, :price, :images_attributes => [:image])
 		end
 end

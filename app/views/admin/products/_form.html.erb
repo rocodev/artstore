@@ -18,7 +18,9 @@
 	<p></p>
 	<table>
 		<tr>
-			<td><p style="font-weight:bold">選擇一張產品圖片</p><p><%= f.input :image, label: false %></p></td>
+			<%= f.fields_for :images do |i| %>
+			<td><p style="font-weight:bold">選擇一張產品圖片</p><p><%= i.file_field :image %></p></td>
+			<% end %>
 		</tr>
 		<tr style="height: 80px;">
 			<td><%= f.submit "確認", :class => "btn btn-primary" %>&nbsp;<%= link_to "取消", admin_products_path %></td>
@@ -27,7 +29,7 @@
 <% end %>
 	</div>
 	<div class="col-md-8">
-		<%= image_tag @product.image_url(:thumb).to_s %>
+		
 	</div>
 	</div>
 

@@ -47,10 +47,7 @@
 }
 
 .product_image_container {
-	height: 210px;
+	height: 200px;
+	width: 200px;
+	margin: auto;
 }
-
-.product_image_container2 {
-	display: inline-block;
-	vertical-align: center;
-};

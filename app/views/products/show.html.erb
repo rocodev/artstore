@@ -2,7 +2,7 @@
 <hr/>
 <div class="row">
 	<div class="col-md-3">
-		<%= image_tag @product.image_url(:thumb) %>
+		<%= image_tag @product.default_image.image_url(:thumb).to_s if @product.default_image.present? %>
 	</div>
 	<div class="col-md-6">
 		<table>

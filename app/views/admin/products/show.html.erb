@@ -2,7 +2,7 @@
 <hr/>
 <div class="row">
 	<div class="col-md-3">
-		<%= image_tag @product.image_url(:thumb) %>
+		<%= image_tag @product.default_image.image_url(:thumb).to_s if @product.default_image.present? %>
 	</div>
 	<div class="col-md-6">
 		<table>
@@ -23,3 +23,15 @@
 		<p><%= link_to "刪除", admin_product_path(@product), method: :delete, data: {confirm: "確認刪除？"}, :class => "btn btn-warning", :style => "margin-top: 160px;" %>&nbsp;<%= link_to "編輯", edit_admin_product_path(@product), :class => "btn btn-primary", :style => "margin-top: 160px;" %>&nbsp;<%= link_to "返回", admin_products_path, :class => "btn btn-primary", :style => "margin-top: 160px;" %></p>
 	</div>
 </div>
+
+<% if @image.length > 1 %>
+	<hr/>
+	<h3>所有圖片</h3>
+	<div class="row">
+		<% @image.each do |i| %>
+		<div class="col-md-3">
+			<%= image_tag i.image_url(:thumb).to_s %>
+		</div>
+		<% end %>
+	</div>
+<% end %>

@@ -12,11 +12,7 @@
 <% @product.each do |product| %>
 <div class="col-md-3 product_item">
 	<div class="product_image_container">
-		<% if product.image_url %>
-				<%= link_to(image_tag(product.image_url(:thumb).to_s), admin_product_path(product) , class: "product_image") %>
-		<% else %>
-			<div class="product_image_blank"></div>
-		<% end %>
+		<%= image_tag product.default_image.image_url(:thumb).to_s if product.default_image.present? %>
 	</div>
 <h4 style="text-align:center"><%= link_to product.title, admin_product_path(product) %></h4>
 <p style="text-align:center">剩餘 <%= product.quantity %> 件 | <%= link_to "編輯", edit_admin_product_path(product) %> | <%= link_to "刪除", admin_product_path(product), method: :delete, data: {confirm: "確定嗎？"} %></p>
