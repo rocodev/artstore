@@ -8,5 +8,4 @@ class Product < ActiveRecord::Base
 	def default_image
 		images.first
 	end
-
 end

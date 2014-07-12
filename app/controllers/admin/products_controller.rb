@@ -13,7 +13,7 @@ class Admin::ProductsController < ApplicationController
 
 	def create
 		@product = Product.new(product_params)
-		
+		@product.default_image = @product.images.first.image_url.to_s
 		if @product.save
 			flash.now[:notice] = "Success"
 			redirect_to admin_products_path
