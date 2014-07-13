@@ -1,1 +1,18 @@
-Products index page is under construction.
+<h1>Products</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= link_to product.title, product %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
