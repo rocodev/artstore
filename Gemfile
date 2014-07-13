@@ -38,6 +38,7 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'devise'
+gem 'devise' # login/logout
+gem 'bootstrap-sass' # make beautiful front end
 
 gem 'better_errors',  group: :development
