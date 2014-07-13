@@ -1,0 +1,45 @@
+<%= nested_form_for [:admin, @product], defaults: { input_html: { class: "form-horizontal", role: "form" }} do |f| %>
+	<div class="form-group">
+	<div class="col-md-4">
+	<table>
+		<tr>
+			<td>標題：<%= f.text_field :title %></td>
+		</tr>
+		<tr>
+			<td>描述：<%= f.text_field :description %></td>
+		</tr>
+		<tr>
+			<td>數量：<%= f.text_field :quantity, :value => "0" %></td>
+		</tr>
+		<tr>
+			<td>價格：<%= f.text_field :price, :value => "0" %></td>
+		</tr>
+	</table>
+	<p>圖片：</p>
+		<%= f.fields_for :images do |i| %>
+			<%= i.file_field :image %>
+			<%= i.link_to_remove "移除" %>
+		<% end %>
+		<p><%= f.link_to_add "增加圖片", :images %></p>
+		<%= f.submit "確認", :class => "btn btn-primary" %>&nbsp;<%= link_to "取消", admin_products_path %></td>
+<% end %>
+	</div>
+	<div class="col-md-8">
+		
+	</div>
+	</div>
+
+
+<style>
+table, td, tr {
+	border: 0px solid black;
+}
+
+td {
+	width: 40px;
+}
+
+td {
+	height: 40px;
+}
+</style>

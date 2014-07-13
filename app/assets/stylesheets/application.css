@@ -51,3 +51,7 @@
 	width: 200px;
 	margin: auto;
 }
+
+.alignright {
+	text-align: right;
+}

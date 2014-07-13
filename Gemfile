@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem "nested_form"
 gem 'simple_form'
 gem 'rmagick', :require => 'RMagick'
 gem 'carrierwave'
