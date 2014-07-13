@@ -1,0 +1,17 @@
+<div class="span12">
+
+	<h2> Product Name : <%= @product.title %> </h2>
+
+	<h4> Product Description : <%= @product.description %> </h4>
+
+	<h4> Quantity : <%= @product.quantity %> </h4>
+
+	<h4> Price (NTD) : <%= @product.price %> </h4>
+
+</div>
+
+<div>hola~</div>
+
+<div>
+	<%= link_to("Edit", edit_admin_product_path(@product)) %>
+</div>

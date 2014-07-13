@@ -1,0 +1,11 @@
+<div>
+	<% @products.each do |product|%>
+ 		<h2> Product Name : <%= link_to product.title, admin_product_path(product.id) %></h2>
+ 		<h4> Product Description : <%= product.description %></h4>
+ 		<h4> Quantity : <%= product.quantity %></h4>
+ 		<h4> Price : <%= product.price %></h4>
+	<% end %>
+
+</div>
+
+<div>hola</div>

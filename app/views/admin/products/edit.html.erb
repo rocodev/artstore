@@ -1,0 +1,29 @@
+<div>
+
+	<%= form_for [:admin, @product] do |f| %>
+		<div>
+			<%= f.label("Product Name") %>
+			<%= f.text_field :title %>
+		</div>
+
+		<div>
+			<%= f.label("Product Description") %>
+			<%= f.text_area :description %>
+		</div>
+
+		<div>
+			<%= f.label("Quantity") %>
+			<%= f.text_field :quantity %>
+		</div>
+
+		<div>
+			<%= f.label("Price (NTD)") %>
+			<%= f.text_field :price %>
+		</div>
+
+		<div>
+			<%= f.submit "Update", :disable_with => 'Submiting...', :class => "btn btn-primary" %>
+		</div>
+	<% end %>
+
+</div>
