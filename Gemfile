@@ -40,5 +40,6 @@ gem 'spring',        group: :development
 
 gem 'devise' # login/logout
 gem 'bootstrap-sass' # make beautiful front end
+gem 'simple_form'
 
 gem 'better_errors',  group: :development
