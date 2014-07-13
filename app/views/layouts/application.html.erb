@@ -18,12 +18,13 @@
 <% else %>
 	<%= current_user.email %>&nbsp;<%= link_to "管理後台首頁", admin_products_path, :class => "btn btn-default" %>&nbsp;<%= link_to "登出", destroy_user_session_path, :method => :delete, :class => "btn btn-default", :style => "margin-right: 10px;" %></p>
 <% end %>
-
 		
 	</div>
 </div>
 
 <div class="container">
+<%= notice %>
+<%= alert %>
 <%= yield %>
 </div>
 

@@ -13,7 +13,7 @@
 <% @product.each do |product| %>
 <div class="col-md-3 product_item">
 	<div class="product_image_container">
-		<%= image_tag product.default_image.image_url(:thumb).to_s if product.default_image.present? %>
+		<%= link_to image_tag(product.default_image.image_url(:thumb).to_s), product_path(product) if product.default_image.present? %>
 	</div>
 <h4 style="text-align:center"><%= link_to product.title, product_path(product) %></h4>
 <p style="text-align:center">剩餘 <%= product.quantity %> 件</p>

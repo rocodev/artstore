@@ -13,9 +13,9 @@ class Admin::ProductsController < ApplicationController
 
 	def create
 		@product = Product.new(product_params)
-		@product.default_image = @product.images.first.image_url.to_s
+		@product.default_image = @product.images.first.image_url.to_s if @product.images.length > 0
 		if @product.save
-			flash.now[:notice] = "Success"
+			flash[:notice] = "Success"
 			redirect_to admin_products_path
 		else
 			render :new
@@ -34,7 +34,7 @@ class Admin::ProductsController < ApplicationController
 	def update
 		@product = Product.find(params[:id])
 		if @product.update(product_params)
-			flash.now[:notice] = "Success"
+			flash[:notice] = "Success"
 			redirect_to admin_products_path
 		else
 			render :edit
@@ -45,13 +45,14 @@ class Admin::ProductsController < ApplicationController
 		@product = Product.find(params[:id])
 		@product.destroy
 		redirect_to admin_products_path
-		flash.now[:notice] = "Product deleted"
+		flash[:notice] = "商品已刪除"
 	end
 
 	def destroy_image
 		@image = Image.find(params[:id])
 		@product = @image.product
 		@image.destroy
+		flash[:notice] = "圖片已刪除"
 		redirect_to admin_product_path(@product)
 	end
 
