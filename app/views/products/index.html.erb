@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-md-12"><span class="page_title">所有產品</span><div>
 	<div class="col-md-12 alignright">
-		<%= form_tag admin_products_path, method: :get do %>
+		<%= form_tag products_path, method: :get do %>
 			<%= text_field_tag :search, params[:search], placeholder: "搜尋" %>
 		<% end %>
 	</div>
