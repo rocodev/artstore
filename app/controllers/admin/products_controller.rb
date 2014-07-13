@@ -5,7 +5,7 @@ class Admin::ProductsController < ApplicationController
 
 	def new
 		@product = Product.new
-		@photos = @product.photos.new
+		@photo = @product.photos.new
 	end
  
 	def create
@@ -20,6 +20,7 @@ class Admin::ProductsController < ApplicationController
 
 	def index
 		@products = Product.all
+		@photos = Photo.all
 	end
 
 	def show
@@ -40,14 +41,15 @@ class Admin::ProductsController < ApplicationController
 		end
 	end
 
-	def destory
-		@product.Product.find(params[:id])
+	def destroy
+		@product = Product.find(params[:id])
 
 		@product.destroy
 
+		flash[:success] = "Delete Successfully!."
+		
 		redirect_to admin_products_path
 	end
-
  
 	private
  

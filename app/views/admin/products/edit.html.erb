@@ -1,29 +1,18 @@
-<div>
+<h2 class="text-center"> Edit My Own Product! </h2>
 
-	<%= form_for [:admin, @product] do |f| %>
-		<div>
-			<%= f.label("Product Name") %>
-			<%= f.text_field :title %>
-		</div>
+<div class="col-md-6 col-md-offset-3 well">
+	<%= simple_form_for [:admin, @product] do |f| %>
 
-		<div>
-			<%= f.label("Product Description") %>
-			<%= f.text_area :description %>
-		</div>
+			<%= f.input :title, label: 'Product Name' %>
 
-		<div>
-			<%= f.label("Quantity") %>
-			<%= f.text_field :quantity %>
-		</div>
+			<%= f.input :description, label: 'Product Description' %>
 
-		<div>
-			<%= f.label("Price (NTD)") %>
-			<%= f.text_field :price %>
-		</div>
+			<%= f.input :price, label: 'Price (NTD)' %>
 
-		<div>
+			<%= f.input :quantity, label: 'Quantity' %>
+
 			<%= f.submit "Update", :disable_with => 'Submiting...', :class => "btn btn-primary" %>
-		</div>
 	<% end %>
 
 </div>
+

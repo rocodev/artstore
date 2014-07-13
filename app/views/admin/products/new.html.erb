@@ -1,26 +1,22 @@
-<%= form_for [:admin, @product] do |f| %>
+<h2 class="text-center"> Add My New Products to Market! </h2>
+<div class="col-md-6 col-md-offset-3 well">
+
+	<%= simple_form_for [:admin, @product] do |f| %>
  
-	<div class="group">
-		<%= f.label("標題") %>
-		<%= f.text_field :title %>
-	</div>
+		<%= f.input :title, label: 'Product Name' %>
 
-	<div class="group">
-		<%= f.label("敘述") %>
-		<%= f.text_area :description %>
-	</div>
+		<%= f.input :description, label: 'Product Description' %>
 
-	<div class="group">
-		<%= f.label("數量") %>
-		<%= f.text_field :quantity %>
-	</div>
+		<%= f.input :price, label: 'Price (NTD)' %>
 
-	<p>
-		<%= f.fields_for :photos do |p| %> 
-			<%= p.file_field :image %>
+		<%= f.input :quantity, label: 'Quantity' %>
+
+		<%= f.simple_fields_for :photos do |p| %> 
+				<%= p.file_field :image %>
 		<% end %>
-	</p>
-
-	<p><%= f.submit "Submit", :disable_with => 'Submiting...' %></p>
+		
+		<%= f.submit "Submit", :disable_with => 'Submiting...', :class => "btn btn-primary" %>
  
-<% end %> 
+	<% end %> 
+
+</div>
