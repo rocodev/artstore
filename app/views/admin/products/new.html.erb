@@ -15,6 +15,12 @@
 		<%= f.text_field :quantity %>
 	</div>
 
-	<%= f.submit "Submit", :disable_with => 'Submiting...' %>
+	<p>
+		<%= f.fields_for :photos do |p| %> 
+			<%= p.file_field :image %>
+		<% end %>
+	</p>
+
+	<p><%= f.submit "Submit", :disable_with => 'Submiting...' %></p>
  
-<% end %>
+<% end %> 

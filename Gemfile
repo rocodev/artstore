@@ -43,3 +43,7 @@ gem 'devise'
 gem 'bootstrap-sass'
 
 gem 'simple_form'
+
+#carrierwave use imagemagic
+gem 'rmagick'
+gem 'carrierwave'
