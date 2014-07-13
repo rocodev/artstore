@@ -5,8 +5,8 @@ class ApplicationController < ActionController::Base
 
   def admin_required
     if !current_user.admin?
-      redirect_to root_path, alert: 'You are not admin!'
-    end    
+      redirect_to root_path, alert: 'you are not admin!!'
+    end
   end
-  
+
 end
