@@ -13,7 +13,7 @@ class Cart < ActiveRecord::Base
   has_many :items, :through => :cart_items, :source => :product
  
  
-  def add_product_to_cart(product)
+  def add_product_to_cart(product, amount)
     items << product
   end
  
