@@ -1,14 +1,23 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Artstore</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+	<head>
+		<title>Artstore</title>
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+		<%= csrf_meta_tags %>
+	</head>
+	<body>
+		<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+			<div class="navbar-header">
 
-<%= yield %>
-
-</body>
+				<%= button_to 'login' , new_user_session_path, class: "navbar-brand" %>
+				<% if !current_user %>
+				<%= link_to("登入", new_user_session_path) %>
+				<% else %>
+				<%= link_to("登出", destroy_user_session_path, :method => :delete ) %>
+				<% end %>
+				<%= yield %>
+			</div>
+		</nav>
+	</body>
 </html>
