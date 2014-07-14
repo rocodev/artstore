@@ -42,4 +42,11 @@ gem 'devise' # login/logout
 gem 'bootstrap-sass' # make beautiful front end
 gem 'simple_form'
 
+# upload image
+gem 'carrierwave'
+
+# belongs to carrierwave, it has to be installed with carrierwave.
+# used to resize the image when uploading.
+gem 'mini_magick' 
+
 gem 'better_errors',  group: :development
