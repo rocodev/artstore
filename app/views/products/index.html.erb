@@ -1,18 +1,5 @@
-<h1>Products</h1>
+<div class="row">
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+  <%= render :partial => "product_item", :collection => @products , :as => :product %>
 
-  <tbody>
-    <% @products.each do |product| %>
-      <tr>
-        <td><%= link_to product.title, product %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+</div>
