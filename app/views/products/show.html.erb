@@ -1,0 +1,28 @@
+<h3 class="page_title"><%= @product.title %></h3>
+<hr/>
+<div class="row">
+	<div class="col-md-3">
+		<%= image_tag @product.default_image.image_url(:thumb).to_s if @product.default_image.present? %>
+	</div>
+	<div class="col-md-6">
+		<table>
+			<tr>
+				<td style="width: 300px;height: 140px; border: 0px solid black; vertical-align: top;">
+					<p style="font-size: 16px;"><%= @product.description %></p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p style="font-weight: bold; font-size: 20px;" >剩餘數量：<%= @product.quantity %> </p>
+					<span style="font-weight: bold; font-size: 20px; line-height: 0px;">價格：<%= @product.price %></span>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div class="pull-right">
+      <%= link_to("加入購物車", add_to_cart_product_path(@product) , :method => :post , :class => "btn btn-primary btn-lg btn-danger") %>
+     </div>
+	<div class="col-md-3">
+		<p><%= link_to "返回", products_path, :class => "btn btn-primary", :style => "margin-top: 160px;" %></p>
+	</div>
+</div>

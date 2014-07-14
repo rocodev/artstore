@@ -1,0 +1,49 @@
+<%= simple_form_for [:admin, @product], defaults: { input_html: { class: "form-horizontal", role: "form" }} do |f| %>
+	<div class="form-group">
+	<div class="col-md-4">
+	<table>
+		<tr>
+			<td><%= f.input :title, label: "標題" %></td>
+		</tr>
+		<tr>
+			<td><%= f.input :description, label: "描述" %></td>
+		</tr>
+		<tr>
+			<td><%= f.input :quantity , input_html: { value: "0"} , label: "數量" %></td>
+		</tr>
+		<tr>
+			<td><%= f.input :price , input_html: { value: "0"}, label: "價格" %></td>
+		</tr>
+	</table>
+	<p></p>
+	<table>
+		<tr>
+			<%= f.fields_for :images do |i| %>
+			<td><p style="font-weight:bold">選擇一張產品圖片</p><p><%= i.file_field :image %></p></td>
+			<% end %>
+		</tr>
+		<tr style="height: 80px;">
+			<td><%= f.submit "確認", :class => "btn btn-primary" %>&nbsp;<%= link_to "取消", admin_products_path %></td>
+		</tr>
+	</table>
+<% end %>
+	</div>
+	<div class="col-md-8">
+		
+	</div>
+	</div>
+
+
+<style>
+table, td, tr {
+	border: 0px solid black;
+}
+
+td {
+	width: 40px;
+}
+
+td {
+	height: 40px;
+}
+</style>
