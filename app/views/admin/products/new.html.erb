@@ -1,12 +1,15 @@
 <%= simple_form_for [:admin, @product] do |f| %>
- 
   <%= f.input :title %>
   <%= f.input :description %>
   <%= f.input :quantity %>
   <%= f.input :price %>
-  
-  <%= f.submit "Submit", :disable_with => 'Submiting...' %> 
- 
 <% end %>
+
+<%= f.simple_fields_for :photos do |c| %>
+  <%= c.input :image, :as => :file %>
+<% end %>
+
+<%= f.submit "Submit", :disable_with => 'Submiting...' %>  
+
 <br>
 <%= link_to 'Cancel', admin_products_path %>
