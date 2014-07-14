@@ -63,6 +63,7 @@ gem 'compass', '>= 0.12.2'
 gem 'compass-rails', '>= 1.0.3'
 gem "bootstrap_helper", ">= 4.2.2.1"
 gem "anjlab-bootstrap-rails", "2.3.1.2", :require => "bootstrap-rails"
+gem "bootstrap-sass"
 
 # 身份驗證功能
 gem "devise", "~> 3.2.2"
