@@ -13,10 +13,10 @@ class CartsController < ApplicationController
   redirect_to :action => "index"
  end
 
- #def clear_item
- #  CartItem.find(params[:id]).destroy
- #  redirect_to :action => "index"
- #end  
+ def clear_item
+  CartItem.find(params[:id]).destroy
+  redirect_to :action => "index"
+ end  
   
   def checkout
     @order = current_user.orders.build
