@@ -1,0 +1,18 @@
+<p>
+  <strong>Title:</strong>
+  <%= @product.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @product.description %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @product.quantity %>
+</p>
+
+<%= link_to 'Edit', edit_admin_product_path(params[:id]) %>
+<br>
+<%= link_to 'Back to products list.', admin_products_path %>
