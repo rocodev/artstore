@@ -10,5 +10,5 @@ class Cart < ActiveRecord::Base
 
   def total_price
   	items.inject(0) {|sum, item| sum + item.price}
-  endx
+  end
 end

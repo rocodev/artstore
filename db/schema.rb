@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140714122552) do
+ActiveRecord::Schema.define(version: 20140714131910) do
 
   create_table "cart_items", force: true do |t|
     t.integer  "cart_id"
@@ -50,7 +50,10 @@ ActiveRecord::Schema.define(version: 20140714122552) do
     t.boolean  "paid",       default: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "token"
   end
+
+  add_index "orders", ["token"], name: "index_orders_on_token"
 
   create_table "photos", force: true do |t|
     t.integer  "product_id"
