@@ -47,3 +47,6 @@ gem 'simple_form'
 #carrierwave use imagemagic
 gem 'rmagick'
 gem 'carrierwave'
+
+#navi bar 
+gem 'rails_bootstrap_navbar'

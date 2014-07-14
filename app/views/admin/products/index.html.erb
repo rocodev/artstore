@@ -4,12 +4,12 @@
 
 		<% @products.each do |product|%>
 		
-		<div class="col-xs-4 col-sm-4">
+		<div class="col-md-3">
 			<%= link_to image_tag(product.photos.first.image.url), product, :class => "thumbnail" %>	
 			
     	</div>
 
-    	<div class="col-xs-8 col-sm-8">
+    	<div class="ccol-md-9">
  				<h2> Product Name : <%= link_to product.title, admin_product_path(product.id) %></h2>
 
 		 		<h4> Product Description : <%= product.description %></h4>
@@ -21,3 +21,5 @@
 		<% end %>
 
 </div>
+
+<%= link_to("Create Product", new_admin_product_path, :class => "btn btn-primary btn-sm") %>
