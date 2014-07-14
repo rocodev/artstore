@@ -7,36 +7,36 @@
       <thead>
         <tr>
           <th>商品資訊</th>
-          <th></th>
+          <th>品名</th>
           <th>單價</th>
         </tr>
       </thead>
+
       <tbody>
-        <% current_cart.items.each do |product| %>
+        <% current_cart.cart_items.each do |item| %>
         <tr>
-          <td><%= render_product_photo(product.default_photo) %></td>
- 
-            <td> 
-              
- 
-              <%= link_to(product.title, admin_product_path(product)) %>
-            </td>
-            <td> <%= product.price %> </td>
-          </tr>
+          <td><%= render_product_photo(item.product.default_photo) %></td>
+          <td><%= item.product.title %></td>
+          <td><%= item.product.price %> </td>
+        </tr>
           <% end %>
- 
         </tbody>
       </table>
  
       <div class="total group">
         <span class="pull-right">
-           <span> 總計 <%= render_cart_total_price(current_cart) %> NTD  
+          總計 <%= render_cart_total_price(current_cart) %> NTD  
         </span>
       </div>
   
       <hr>
       <div class="checkout">
-          <%= link_to("確認結賬", checkout_carts_path , :method => :post , :class => "btn btn-primary btn-lg btn-danger pull-right") %>
+          <%= link_to("確認結賬", checkout_carts_path , 
+                      :method => :post , 
+                      :class => "btn btn-primary btn-lg btn-danger pull-right") %>
+          <%= link_to("清空購物車", clear_cart_carts_path , 
+                      :method => :delete , 
+                      :class => "btn btn-primary btn-lg btn-info pull-right")%>
       </div>
  
  
