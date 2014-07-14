@@ -3,7 +3,7 @@
 <%@products.each do |product| %>
   <div class="col-md-3">
     <div class="thumbnail">
-      <%= image_tag product.image.url(:sm)%>
+      <%= image_tag product.default_photo.image.url(:md)%>
       <div class="caption">
         <h3><%= link_to product.title,admin_product_path(product) %></h3>
         <p><%= product.description %></p>
