@@ -29,13 +29,16 @@ gem 'spring',        group: :development
 
 gem 'devise'
 gem 'bootstrap-sass'
-
+gem "font-awesome-rails"
 
 gem 'carrierwave'
 gem "mini_magick"
 
 
 gem 'simple_form'
+
+
+
 
 
 # Use ActiveModel has_secure_password
