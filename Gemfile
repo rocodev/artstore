@@ -29,7 +29,7 @@ gem 'spring',        group: :development
 gem 'devise'
 gem "bootstrap-sass"
 gem "simple_form"
-
+gem "letter_opener"
 gem 'carrierwave'
 gem "mini_magick"
 
