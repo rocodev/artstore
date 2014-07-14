@@ -1,10 +1,44 @@
-<h2 class="text-center">我的個人後台</h2>
-<h3 class="text-center">商品修改</h3>
+<h2> 編輯 <%= @product.title %> </h2>
 
-<%= simple_form_for [:admin, @product] do |f| %>
-  <%= f.input :title, label: '商品名稱' %>
-  <%= f.input :description, label: '商品介紹' %>
-  <%= f.input :price, label: '商品價格(新台幣)' %>
-  <%= f.input :quantity, label: '商品數量' %>
-  <%= f.submit "Submit", :disable_with => 'Submitting...' %>
+<%= simple_form_for [:admin, @product ] , :html => { :class => "form form-horizontal"  } do |f| %>
+
+  <div class="form-group">
+  
+    <div class="col-sm-10">
+      <%= f.input :title %>
+    </div>
+  </div>
+  
+  <div class="form-group">
+  
+    <div class="col-sm-10">
+      <%= f.input :description, :as => :text %>
+    </div>
+  </div>
+  
+  
+  
+  <div class="form-group">
+  
+    <div class="col-sm-1">
+      <%= f.input :quantity %>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+  
+    <div class="col-sm-1">
+      <%= f.input :price %>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+    <%= f.submit "Submit", :class => "btn btn-default" , :disable_with => 'Submiting...' %>
+  </div>
+
+
+
+
 <% end %>

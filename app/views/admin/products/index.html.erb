@@ -1,32 +1,32 @@
-<h2 class="text-center">我的個人後台</h2>
-<h3 class="text-center">商品清單</h3>
-<div class="group">
-  <%= link_to("新商品", new_admin_product_path , :class => "btn btn-large btn-primary pull-right" ) %>
+
+<h2> Product List </h2>
+
+<div class="pull-right" style="padding-bottom: 20px;">
+  <%= link_to("新增產品", new_admin_product_path, :class => "btn btn-primary btn-sm") %>
 </div>
 
-<table class="table table-hover">
+<table class="table table-bordered">
   <thead>
     <tr>
-      <td> # </td>
-      <td> 照片 </td>
-      <td> 名稱 </td>
-      <td> 介紹 </td>
-      <td> 價格(新台幣) </td>
-      <td> 數量 </td>
-      <td> 功能 </td>
+      <th>#</th>
+      <th>Product Name</th>
+      <th>Manage Options</th>
     </tr>
   </thead>
   <tbody>
     <% @products.each do |product| %>
     <tr>
-      <td> <%= product.id %> </td>
-      <td> <%= link_to(image_tag(product.photo_url(:thumb)), admin_product_path(product)) %> </td>
-      <td> <%= link_to(product.title, admin_product_path(product)) %> </td>
-      <td> <%= product.description %> </td>
-      <td> <%= product.price %> </td>
-      <td> <%= product.quantity %> </td>
-      <td> <%= ibutton("Edit", edit_admin_product_path(product), :class => "btn btn-info btn-mini" , :iclass => "icon-pencil") %>
-           <%= ibutton("Delete", admin_product_path(product), :class => "btn btn-mini btn-danger", :iclass => "icon-remove", :method => :delete, data: { confirm: "Are you sure?" }  ) %></td>
+      <td> <%= product.id %>
+      <td> 
+        <%= render_product_photo(product.default_photo) %>
+
+        <%= link_to(product.title, admin_product_path(product)) %>
+       </td>
+      <td> <%= link_to("Edit", edit_admin_product_path(product)) %> </td>
+    </tr>
     <% end %>
+
   </tbody>
 </table>
+
+
