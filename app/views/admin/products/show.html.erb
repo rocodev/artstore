@@ -13,6 +13,11 @@
   <%= @product.quantity %>
 </p>
 
+<p>
+  <strong>Price:</strong>
+  <%= @product.price %>
+</p>
+
 <%= link_to 'Edit', edit_admin_product_path(params[:id]) %>
 <br>
 <%= link_to 'Back to products list.', admin_products_path %>
