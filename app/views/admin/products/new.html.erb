@@ -1,0 +1,22 @@
+<h2 class="text-center"> Add My New Products to Market! </h2>
+<div class="col-md-6 col-md-offset-3 well">
+
+	<%= simple_form_for [:admin, @product] do |f| %>
+ 
+		<%= f.input :title, label: 'Product Name' %>
+
+		<%= f.input :description, label: 'Product Description' %>
+
+		<%= f.input :price, label: 'Price (NTD)' %>
+
+		<%= f.input :quantity, label: 'Quantity' %>
+
+		<%= f.simple_fields_for :photos do |p| %> 
+				<%= p.file_field :image %>
+		<% end %>
+		
+		<%= f.submit "Submit", :disable_with => 'Submiting...', :class => "btn btn-primary" %>
+ 
+	<% end %> 
+
+</div>

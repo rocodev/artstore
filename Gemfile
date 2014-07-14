@@ -38,3 +38,15 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+gem 'devise'
+
+gem 'bootstrap-sass'
+
+gem 'simple_form'
+
+#carrierwave use imagemagic
+gem 'rmagick'
+gem 'carrierwave'
+
+#navi bar 
+gem 'rails_bootstrap_navbar'
