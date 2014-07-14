@@ -1,0 +1,25 @@
+Readme:
+  ☐ cmd + i
+  ☐ cmd + d
+  ☐ cmd + enter
+  ☐ ...
+身為商家的管理者，我要能夠在後台上架我的東西，並設定能夠販賣:
+ ☐ 管理者必須要有一個後台（/admin/products/）
+ ☐ 後台必須要可以新增產品
+ ☐ 產品內容必須要有標題、文字、數量、圖片
+身為商家的管理者，我要能夠在後台設定權限，權限分成管理者以及消費者:
+ ☐ 身為管理者，才可以進入後台
+ ☐ 身為管理者，必須要登入且是admin
+ ☐ 管理者身份必須要被分為admin/user
+身為消費者，我能在一開始頁面就看到商品清單:
+ ☐ 一進入頁面就看到商品清單
+Day01作業:
+  ☐ 寫後台的User Story
+  ☐ 實作圖片上傳 carrierwave
+  ☐ 用Bootstrap做一個有"Navbar"的layout
+  ☐ 使用simple_form 換掉form
+  ☐ 實作products/show, products/index
+快捷鍵:
+  ☐ 在html.erb中，按 option + command + F 排版
+  ☐ 在source.rb中，按 ctrl + command + K 排版
+  ☐ ctrl + shift + K，刪除一行
