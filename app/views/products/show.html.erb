@@ -19,6 +19,9 @@
 			</tr>
 		</table>
 	</div>
+	<div class="pull-right">
+      <%= link_to("加入購物車", add_to_cart_product_path(@product) , :method => :post , :class => "btn btn-primary btn-lg btn-danger") %>
+     </div>
 	<div class="col-md-3">
 		<p><%= link_to "返回", products_path, :class => "btn btn-primary", :style => "margin-top: 160px;" %></p>
 	</div>
