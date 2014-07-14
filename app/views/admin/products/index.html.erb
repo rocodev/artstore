@@ -1,20 +1,23 @@
 <h1>Index page</h1>
-
-
-<table class="table">
-	<tr>
-		<td>Title</td>
-		<td>Content</td>
-		<td>Quantity</td>
-	</tr>
-
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>#</th>
+			<th>Title</th>
+			<th>Description</th>
+			<th>Quantity</th>
+			<th>Modify</th>
+		</tr>
+	</thead>
 	<% @product.each do |p| %>
-
-	<tr>
-		<td><%= p.title %> </td>
-		<td><%= p[:description] %></td>
-		<td><%= p.quantity %></td>
-	</tr>
-
+	<tbody>
+		<tr>
+			<td><%= p.id %></td>
+			<td><%= p.title %> </td>
+			<td><%= p[:description] %></td>
+			<td><%= p.quantity %></td>
+			<td><%= link_to "Edit", edit_admin_product_path(p.id) %></td>
+		</tr>
+	</tbody>
 	<% end %>
 </table>
