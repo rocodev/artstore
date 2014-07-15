@@ -11,7 +11,8 @@ class OrdersController < ApplicationController
       current_cart.clear!
       OrderMailer.notify_order_placed(@order).deliver
 
-      redirect_to order_path(@order.token)
+      redirect_to account_orders_path, :notice => "成功完成付款"
+
     else
       render "carts/checkout"
     end
