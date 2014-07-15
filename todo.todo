@@ -19,11 +19,11 @@
 
 作業3:
  ✔ 建⽴ account/orders 可以看到該使⽤者過去所有訂單 @done (14-07-15 13:33)
- ☐ 結賬後跳轉到 account/orders#index
+ ✔ 結賬後跳轉到 account/orders#index @done (14-07-15 13:35)
 
 
 作業4:
- ☐ 建⽴ admin/orders 可以看到系統內所有訂單
+ ✔ 建⽴ admin/orders 可以看到系統內所有訂單 @done (14-07-15 13:40)
  ☐ admin 的 order 列表應要能顯⽰訂單狀態
  ☐ 單張 order 應要可以要「按照狀態圖」改變狀態
 
