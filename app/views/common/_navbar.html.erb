@@ -15,8 +15,8 @@
       <ul class="nav navbar-nav navbar-right">
         <li> 
           <%= link_to carts_path do  %> 
-            購物車 <i class="glyphicon glyphicon-shopping-cart"> </i> 
-            ( <%= cart_items_count(current_cart) %> )
+              購物車 <i class="glyphicon glyphicon-shopping-cart"> </i> 
+              ( <%= cart_items_count(current_cart) %> )
           <% end %>
         </li>
         <% if !current_user %>
@@ -37,11 +37,10 @@
               <li class="divider"></li>
             <% end %>
 
+              <li> <%= link_to("過去訂單", account_orders_path) %> </li>
 
-
-            <li> 
-              <%= link_to("登出", destroy_user_session_path, :method => :delete ) %>
-            </li>
+              <li> <%= link_to("登出", destroy_user_session_path, 
+                               :method => :delete ) %></li>
 
           </ul>
         </li>
