@@ -13,7 +13,7 @@
   <tbody>
     <% @orders.each do |order| %>
     <tr>
-      <td> <%= render_order_link(order) %> </td>
+      <td> <%= render_admin_order_link(order) %> </td>
       <td> <%= render_order_created_time(order) %> </td>
       <td> <%= render_order_user_name(order.user) %></td>
       <td> <%= render_order_state(order) %> </td>
