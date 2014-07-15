@@ -30,6 +30,7 @@ class OrdersController < ApplicationController
 
     @order.make_payment! # TODO: should move to stripe callbacks
 
+    CardChargeMailer.card_charge_placed(@order).deliver # TODO: 信用卡金流功能做好，就要改放到信用卡結賬完成處
 
     redirect_to root_path, :notice => "成功完成付款"
   end
