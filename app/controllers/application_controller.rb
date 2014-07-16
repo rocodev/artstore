@@ -7,4 +7,22 @@ class ApplicationController < ActionController::Base
     current_user.is_admin?
   end
 
+  helper_method :current_cart
+  
+  def current_cart
+    @current_cart ||= find_Cart
+  end
+
+  def find_Cart
+    cart = Cart.find_by(id: session[:cart_id])
+
+    unless cart.present?
+      cart = Cart.create  
+    end
+
+    session[:cart_id] = cart.id
+    cart
+
+  end
+
 end
