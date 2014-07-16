@@ -13,6 +13,9 @@ Rails.application.routes.draw do
       post :add_to_cart
     end
   end
+
+
+  resources :carts
   #resources :products, only: [:index,:show]
 
   # The priority is based upon order of creation: first created -> highest priority.
