@@ -1,6 +1,6 @@
 <div class="col-md-6 col-md-offset-3 well">
   <h1>New Prduct</h1>
-  <%= simple_form_for @product, html: { multipart: true },:url => admin_products_path(@product) do |f| %>
+  <%= simple_form_for @product, html: { multipart: true},:url => admin_products_path(@product) do |f| %>
 
   <%= render(:partial=>'form', :locals=>{:f=>f})%>
  
