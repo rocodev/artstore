@@ -1,0 +1,11 @@
+
+<div class="nested-fields form-inline form-img-box">
+	</br>
+	<%=f.input :image, :input_html=>{:class=>"form-control"}, :wrapper_html=>{:class=>"form-group"}, :label=>"上傳圖片"%>
+
+	<%if !f.object.image_url.nil?%>
+       <%= image_tag(f.object.image_url, :class=>"img-rounded")%>
+	<%end%>
+
+  <%=link_to_remove_association("remove photo", f, {:class=>"btn btn-sm btn-danger"})%>
+</div>
