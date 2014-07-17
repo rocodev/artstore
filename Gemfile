@@ -39,7 +39,7 @@ gem "mini_magick"
 group :development do 
   gem "annotate"
   gem "letter_opener"
-  gem 'roadie'
+  gem 'roadie', '~> 2.4'
 end
 
 gem 'aasm'

@@ -106,9 +106,11 @@ GEM
     rake (10.3.2)
     rdoc (4.1.1)
       json (~> 1.4)
-    roadie (3.0.0)
+    roadie (2.4.3)
+      actionmailer (> 3.0.0, < 5.0.0)
       css_parser (~> 1.3.4)
-      nokogiri (~> 1.6.0)
+      nokogiri (> 1.5.0)
+      sprockets
     sass (3.2.19)
     sass-rails (4.0.3)
       railties (>= 4.0.0, < 5.0)
@@ -164,7 +166,7 @@ DEPENDENCIES
   letter_opener
   mini_magick
   rails (= 4.1.0)
-  roadie
+  roadie (~> 2.4)
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   simple_form (= 3.1.0rc1)
