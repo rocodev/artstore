@@ -40,7 +40,9 @@ gem 'spring',        group: :development
 
 
 #customize gem
-gem 'pry', '~> 0.10.0'
+#gem 'pry', '~> 0.10.0'
+gem 'pry-rails'
+gem 'pry-plus'
 gem 'simple_form', '~> 3.0.2'
 gem 'bootstrap-sass', '~> 3.2.0.0'
 #The bootstrap-sass-rails gem is deprecated starting with version 3.1.0.0.
