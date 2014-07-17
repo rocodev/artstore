@@ -1,8 +1,5 @@
-class Admin::ProductsController < ApplicationController
+class Admin::ProductsController < AdminController
 
-	#the order is important, you should confirm current_user is exit brfore called admin_required
-	before_action :authenticate_user!
-	before_action :admin_required, :except => [:index]
 	before_action :find_product, :only => [:show, :edit, :update, :destroy]
 
 

@@ -51,6 +51,7 @@ gem 'will_paginate' , '~> 3.0'
 gem 'will_paginate-bootstrap' 
 gem 'devise' , '~> 3.2'
 gem 'carrierwave'
+gem 'mini_magick', '~> 3.7.0'
 gem 'cocoon', '~> 1.2.6'
 
 group :developmet, :test do
