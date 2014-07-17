@@ -14,8 +14,19 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :carts do
+    collection do
+      post :checkout
+    end
+  end
 
-  resources :carts
+  resources :orders do
+    member do
+      get :pay_with_credit_card
+    end
+  end
+
+  #resources :carts
   #resources :products, only: [:index,:show]
 
   # The priority is based upon order of creation: first created -> highest priority.
