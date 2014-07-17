@@ -1,5 +1,5 @@
 class Cart < ActiveRecord::Base
-  
+
   has_many :cart_items, :dependent => :destroy
   has_many :items,  :through => :cart_items , :source=> :product
 
@@ -9,6 +9,8 @@ class Cart < ActiveRecord::Base
 
   def total_price
     items.inject(0){|sum,item| sum+=item.price}
-  end 
+  end
+
+
 
 end
