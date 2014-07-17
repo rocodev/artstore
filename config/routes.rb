@@ -5,23 +5,25 @@ Rails.application.routes.draw do
     resources :products
   end
 
-  resources :products do
-  	member do
-  		post :add_to_cart
-  	end
+
+  resources :products do 
+    member do 
+      post :add_to_cart
+    end
   end
 
-  resources :carts do
-  	collection do
-  		post :checkout
-  	end
+  resources :carts do 
+    collection do 
+      post :checkout
+    end
   end
 
-  resources :orders do
-    member do
+  resources :orders do 
+    member do 
       get :pay_with_credit_card
     end
   end
   
+
   root :to => "products#index"
 end

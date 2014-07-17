@@ -4,7 +4,7 @@ class CreateOrderInfos < ActiveRecord::Migration
       t.integer :order_id
       t.string :billing_name
       t.string :billing_address
- 
+
       t.string :shipping_name
       t.string :shipping_address
       t.timestamps

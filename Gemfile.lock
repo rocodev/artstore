@@ -1,7 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    aasm (3.3.1)
+    aasm (3.2.0)
     actionmailer (4.1.0)
       actionpack (= 4.1.0)
       actionview (= 4.1.0)
@@ -166,7 +166,7 @@ DEPENDENCIES
   letter_opener
   mini_magick
   rails (= 4.1.0)
-  roadie (~> 2.4)
+  roadie
   sass-rails (~> 4.0.3)
   sdoc (~> 0.4.0)
   simple_form (= 3.1.0rc1)

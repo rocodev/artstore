@@ -1,3 +1,17 @@
+# == Schema Information
+#
+# Table name: orders
+#
+#  id             :integer          not null, primary key
+#  user_id        :integer
+#  total          :integer          default(0)
+#  paid           :boolean          default(FALSE)
+#  created_at     :datetime
+#  updated_at     :datetime
+#  token          :string(255)
+#  payment_method :string(255)
+#
+
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 # This model initially had no columns defined.  If you add columns to the
