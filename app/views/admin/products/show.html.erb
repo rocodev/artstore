@@ -9,7 +9,7 @@
   <%= @product.description  %><br><br><br>
   數量:<%= @product.quantity  %><br>
   <h2 style='color: red'><strong>$ <%= @product.price  %></strong></h2>
-    <%= link_to "加入購物車","xxxx", class: "btn btn-danger" %>
+       <%= link_to "加入購物車",add_to_cart_product_path(@product),:method=>:post, class: "btn btn-danger" %>
   </div>
 </div>
 
