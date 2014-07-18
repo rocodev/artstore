@@ -6,10 +6,18 @@ class CartsController < ApplicationController
   end
 
   def checkout
+
+    params['product'].keys.each do |id|
+      @item = current_cart.items.find(id.to_i)
+      @item.update_attribute(:quantity,params['product'][id])
+    end
+
     @order = current_user.orders.build
     @info = @order.build_info
   end
   
+
+
   def deleteCart
     
     cart = Cart.find_by(id: params[:cart_id])
@@ -19,5 +27,7 @@ class CartsController < ApplicationController
     session[params[:cart_id]] = nil
     redirect_to root_path
   end
+
+
 
 end

@@ -9,7 +9,7 @@
   <h3><%= @product.title  %></h3>
   <%= @product.description  %><br><br><br>
   數量:<%= @product.quantity  %><br>
-  <h2 style='color: red'><strong>$ 45,000</strong></h2>
+  <h2 style='color: red'><strong>$ <%= @product.price  %></strong></h2>
     
     <%= link_to "清空購物車",cart_deleteCart_path(current_cart), class: "btn btn-warning"%>
     <%= link_to "加入購物車",add_to_cart_product_path(@product),:method=>:post, class: "btn btn-danger" %>

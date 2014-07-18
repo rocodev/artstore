@@ -1,44 +1,50 @@
  <div class="row">
-<div class="col-md-12">
- 
-<h2> 購物車 </h2>
- 
-<table class="table table-bordered">
-<thead>
-<tr>
-<th>商品資訊</th>
-<th></th>
-<th>單價</th>
-</tr>
-</thead>
-<tbody>
-<% current_cart.items.each do |product| %>
-<tr>
-<td><%= image_tag product.default_photo.image.url(:sm)%></td>
- 
-<td>
- 
-<%= link_to(product.title, admin_product_path(product)) %>
-</td>
-<td> <%= product.price %> </td>
-</tr>
-<% end %>
- 
-</tbody>
-</table>
- 
-<div class="total group">
-<span class="pull-right">
-<span> 總計 <%= render_cart_total_price(current_cart) %> NTD
-</span>
-</div>
-<hr>
-<div class="checkout">
-<%= link_to("確認結賬", checkout_carts_path , :method => :post , :class => "btn btn-primary btn-lg btn-danger pull-right") %>
-</div>
- 
- 
-</div>
- 
- 
-</div>
+  <div class="col-md-12">
+
+    <h2> 購物車 </h2>
+  <%= form_for :product , :url => checkout_carts_path, :html => { :method => :put } do |f| %>
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>商品資訊</th>
+          <th></th>
+          <th>單價</th>
+          <th>數量</th>
+          <th>移除</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% current_cart.items.each do |product| %>
+        <%#= product.simple_fields_for :quantity  do |c| %>
+        <tr>
+          <td><%= image_tag product.default_photo.image.url(:sm)%></td>
+          <td>
+            <%= link_to(product.title, admin_product_path(product)) %>
+          </td>
+          <td> <%= product.price %> </td>
+          <td> 
+            <%#= f.hidden_field :id, { :value => product.id } %>
+            <%= f.select product.id, options_for_select((1..10).collect{ |u| [u,u]}) %>
+          </td>
+          <td> <%= link_to "從購物車移除", remove_from_cart_product_path(product),:method=> :delete, :class=> "btn btn-danger btn-sm" %> </td>
+        </tr>
+        <% #end %>
+        <% end %>
+      </tbody>
+    </table>
+
+    <div class="total group">
+      <span class="pull-right">
+        <span> 總計 <%= render_cart_total_price(current_cart) %> NTD
+        </span>
+      </div>
+      <hr>
+      <div class="checkout">
+        <%= f.submit "確認結賬", :class => "btn btn-primary btn-lg btn-danger pull-right" %>
+
+      </div>
+    <% end %>
+    </div>
+
+
+  </div>

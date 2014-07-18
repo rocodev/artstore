@@ -22,5 +22,11 @@ class ProductsController < ApplicationController
     redirect_to :back
   end
 
+  def remove_from_cart
+    @product = Product.find(params[:id])
+    current_cart.remove_product_from_cart(@product)
+    redirect_to root_path
+  end
+
 
 end

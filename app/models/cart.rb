@@ -7,8 +7,12 @@ class Cart < ActiveRecord::Base
     items << product
   end
 
+  def remove_product_from_cart(product)
+    items.delete(product)
+  end
+
   def total_price
-    items.inject(0){|sum,item| sum+=item.price}
+    items.inject(0){|sum,item| sum+=item.price * item.quantity }
   end
 
 
