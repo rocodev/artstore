@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    aasm (3.3.1)
     actionmailer (4.1.0)
       actionpack (= 4.1.0)
       actionview (= 4.1.0)
@@ -220,6 +221,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  aasm (~> 3.3.1)
   annotate (~> 2.6.5)
   bootstrap-sass (~> 3.2.0.0)
   carrierwave

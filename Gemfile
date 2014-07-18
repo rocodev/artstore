@@ -54,6 +54,7 @@ gem 'carrierwave'
 gem 'mini_magick', '~> 3.7.0'
 gem 'cocoon', '~> 1.2.6'
 gem 'settingslogic', '~> 2.0.9'
+gem 'aasm', '~> 3.3.1'
 
 group :developmet, :test do
 	gem 'guard-livereload'
