@@ -53,6 +53,7 @@ gem 'devise' , '~> 3.2'
 gem 'carrierwave'
 gem 'mini_magick', '~> 3.7.0'
 gem 'cocoon', '~> 1.2.6'
+gem 'settingslogic', '~> 2.0.9'
 
 group :developmet, :test do
 	gem 'guard-livereload'
