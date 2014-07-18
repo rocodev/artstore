@@ -7,8 +7,13 @@
 
 
 
-    <%if !photos.nil?%>
-      <% photos.each do |photo| %>
+    <%if product.photos_are_empty?%>
+      <div class="item img-box">
+          <%= image_tag( render_product_photo(product.default_photo), :class=>"img-rounded")%>
+      </div>
+
+    <%else%>
+      <% product.photos.each do |photo| %>
         <div class="item img-box">
           <%= image_tag(photo.image_url, :class=>"img-rounded")%>
         </div>

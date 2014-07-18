@@ -2,6 +2,8 @@
 <html>
 <head>
   <title>Artstore</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -9,11 +11,14 @@
 <body>
 
 
-<%= render(:partial=>'layouts/header')%>
+
 <div class="container">
-	<%flash.each do |name , msg|%>
-		<%= content_tag(:div , msg,class: "alert alert-info") %>
-	<%end%>
+	<%= render(:partial=>'common/navbar')%>
+	<%=notice_message%>
+
+	<%#flash.each do |name , msg|%>
+		<%#= content_tag(:div , msg,class: "alert alert-info") %>
+	<%#end%>
 	<%= yield %>
 </div>
 
