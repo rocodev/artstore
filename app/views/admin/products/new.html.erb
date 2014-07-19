@@ -2,39 +2,33 @@
 <div class="row">
   <div class="col-md-4">
   <div class="group">
-    <div id="upload-image-holder"></div>
     <%= f.fields_for :photos do |p| %>
-      <%= p.file_field :image %>
-      <%= p.hidden_field :image_cache %>
-    <% end %>
-  </div>
-</div>
+        <%= p.file_field :image, :multiple => true, name: "product[photos_attributes][][image]", style: "height:300px;width:300px;"%>
+   <% end %>
 
+  </div>
+  </div>
   <div class="col-md-4">      
 
   <div class="form-group">
-    <%= f.label("標題") %>
-    <%= f.text_field :title, :class => "form-control"%>
+    <%= f.input :title, label: "標題" %>
   </div>
   
   <div class="form-group">
-    <%= f.label("敘述") %>
-    <%= f.text_area :description, :class => "form-control", :rows => "5" %>
+    <%= f.input :description, label: "敘述", input_html: {rows: "5"} %>
   </div>
 
   <div class="form-group">
     <div class="row">
-  <div class="col-xs-3">
-    <%= f.label("價格") %>
-    <%= f.text_field :price, :class => "form-control" %>
+      <div class="col-xs-3">
+        <%= f.input :price, label: "價格" %>
   </div></div>
   </div>
 
   <div class="form-group">
     <div class="row">
   <div class="col-xs-3">
-    <%= f.label("數量") %>
-    <%= f.text_field :quantity, :class => "form-control" %>
+        <%= f.input :quantity, label: "數量" %>
   </div></div>
   </div>
   
@@ -46,11 +40,9 @@
   
   <div class="modal-footer">
         <%= link_to "取消", admin_products_path, :class => "btn btn-default" %>
-        <%= f.submit "新增", :class => "btn btn-primary", :disable_with => 'Submiting...' %>
+        <%= f.submit "新增", :class => "btn btn-primary upload-btn", :disable_with => 'Submiting...' %>
   </div>
  
 </div>
 <% end %>
-
-
 

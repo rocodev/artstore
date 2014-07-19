@@ -22,7 +22,8 @@ class Admin::ProductsController < ApplicationController
 
   def update
     @product = Product.find(params[:id])
-    @product.update_attributes(product_params)
+    @product.update_attributes(update_product_params)
+    logger.debug { update_product_params }
     if @product.save
       redirect_to admin_products_path
     else
@@ -49,4 +50,12 @@ class Admin::ProductsController < ApplicationController
     def product_params
       params.require(:product).permit(:title, :description,:quantity,:price,:for_sale,photos_attributes:[:image])
     end  
+
+    def update_product_params
+      params.require(:product).permit(:title, :description,:quantity,:price,:for_sale,photos_attributes:[:image,:id])
+    end  
+
+    # def product_params
+    #   params.require(:product).permit(:title, :description,:quantity,:price,:for_sale,photos_attributes:[:image])
+    # end  
 end

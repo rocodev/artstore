@@ -11,9 +11,11 @@
         <p><span class="label label-danger">未上架</span><p>
       <% end %>
     </div>
+    <% if is_admin? %>
     <div class="modal-footer">
         <%= link_to "修改", edit_admin_product_path(product), :class => "btn btn-default" %>
         <%= link_to "刪除", admin_product_path(product),method: :delete ,:class => "btn btn-warning", :disable_with => 'Submiting...' %>
     </div>  
+    <% end %>
   </div>
 </div>
