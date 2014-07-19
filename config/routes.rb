@@ -11,11 +11,13 @@ Rails.application.routes.draw do
   resources :products do
     member do
       post :add_to_cart
+      delete :remove_from_cart
     end
   end
 
   resources :carts do
     collection do
+      delete :remove_all
       post :checkout
     end
   end
@@ -25,6 +27,8 @@ Rails.application.routes.draw do
       get :pay_with_credit_card
     end
   end
+
+  resources :cart_items
 
 
   root :to => "products#index"
