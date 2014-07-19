@@ -56,6 +56,9 @@ gem 'cocoon', '~> 1.2.6'
 gem 'settingslogic', '~> 2.0.9'
 gem 'aasm', '~> 3.3.1'
 
+# add for snipper 
+gem 'jquery-ui-rails', '~> 5.0.0'
+
 group :developmet, :test do
 	gem 'guard-livereload'
 	gem 'annotate', '~> 2.6.5'

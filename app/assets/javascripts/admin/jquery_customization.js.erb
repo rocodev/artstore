@@ -1,9 +1,50 @@
 $(document).on('ready page:load', function(){
 
-
+	//initialize slide show
 	$("div.item:first-child").addClass("active");
 
-	//var tmpl = '<div class="input file optional photo_image form-group"><label class="file optional" for="photo_image">上傳圖片</label><input class="file optional form-control" id="photo_image" name="photo[image]" type="file"></div><label class="file optional" for="photo_image">上傳圖片</label><input class="file optional form-control" id="photo_image" name="photo[image]" type="file"></div>'
 
+	//initialize spinner
+	var spinners = $( ".spinner" ).spinner({min: 1});
+
+	$.each( spinners , function(index,spinner){
+		//spinner is a DOM object
+		//console.log(index);
+		//console.log(spinner);
+		var max = parseInt($(this).attr("data_max"));
+		$(this).spinner( "option", "max", max);
+		var start_value = $(this).attr("data_start");
+		$(this).spinner( "value", start_value);
+
+
+		$(this).on( "spin", function( event, ui ){
+			//console.log(ui.value);
+			update_cart_item_quantity(this,event,ui.value);	
+		});
+
+		$(this).on( "spinchange", function(event , ui) {
+			var spin_value = parseInt($(this).attr("aria-valuenow"));
+			//console.log(this);
+			if(spin_value > max){
+				$(this).spinner( "value", max);
+				spin_value = max
+			}
+			update_cart_item_quantity(this,event,spin_value);	
+
+		});
+
+	});
+
+  function update_cart_item_quantity(this_obj, event, update_quantity){
+  		var span = $(this_obj).closest("span");
+			var form = span.siblings("form");
+			var input_text = form.find("input[type='number']");
+			//var submit_button = form.find("input[type='submit']");
+			input_text.attr("value" , update_quantity);
+			form.submit();
+  } 
+
+
+	//var tmpl = '<div class="input file optional photo_image form-group"><label class="file optional" for="photo_image">上傳圖片</label><input class="file optional form-control" id="photo_image" name="photo[image]" type="file"></div><label class="file optional" for="photo_image">上傳圖片</label><input class="file optional form-control" id="photo_image" name="photo[image]" type="file"></div>'
 
 });

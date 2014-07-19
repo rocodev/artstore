@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  get 'flatuipro_demo/index'
+
   devise_for :users
   namespace :admin do
     resources :products do

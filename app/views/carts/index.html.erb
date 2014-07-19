@@ -8,23 +8,48 @@
         <tr>
           <th>商品資訊</th>
           <th>商品名稱</th>
+          <th>剩餘數量</th>
           <th>單價</th>
+          <th>數量</th>
           <th>刪除</th>
         </tr>
       </thead>
       <tbody>
-        <% current_cart.items.each do |product| %>
+        <% current_cart.cart_items.each do |cart_item| %>
         <tr>
-          <td><%=image_tag( render_product_photo(product.default_photo)) %></td>
+          <td><%=image_tag( render_product_photo(cart_item.product.default_photo)) %></td>
 
             <td> 
               
 
-              <%= link_to(product.title, admin_product_path(product)) %>
+              <%= link_to(cart_item.product.title, admin_product_path(cart_item.product)) %>
             </td>
-            <td> <%= product.price %> </td>
+            <td> <%= cart_item.product.quantity %> </td>
+            <td> <%= cart_item.product.price %> </td>
 
-            <td> <%= link_to 'delete', remove_from_cart_product_path(product), :method => :delete ,  :class=> "btn btn-primary btn-lg btn-danger"%></td>
+            <td>
+
+              <div class="form-group">
+                <%= simple_form_for cart_item, :remote => true, :url => cart_item_path(cart_item), :html=>{:class=>""} do |f| %>
+                <%= f.input :quantity %>
+                <%end%>
+
+                <%=text_field_tag( "spinner", 1 ,:id => "spinner-01", :class=> "spinner" , :type=>"text", :data_max => cart_item.product.quantity , :data_start => cart_item.quantity)%>
+              </div>
+
+
+
+              <%#= simple_form_for cart_item, :url => cart_item_path(cart_item) do |f| %>
+
+                  <%#= f.input :quantity, :input_html=>{:class=>"form-control", :value=>cart_item.quantity}, :wrapper_html=>{:class=>"form-group"}, :label=>"價格" %>
+                  <div class="form-group">
+                    <%#= f.submit "確認修改" ,:class => "btn btn-primary"%>
+                  </div>
+
+              <%#end%>
+            </td>
+
+            <td> <%= link_to 'delete', remove_from_cart_product_path(cart_item.product), :method => :delete ,  :class=> "btn btn-primary btn-lg btn-danger"%></td>
           </tr>
           <% end %>
 
@@ -33,7 +58,7 @@
 
       <div class="total group">
         <span class="pull-right">
-           <span> 總計 <%= render_cart_total_price(current_cart) %> NTD  
+           總計 <span class="span_price"><%= render_cart_total_price(current_cart) %></span> NTD 
         </span>
       </div>
   
