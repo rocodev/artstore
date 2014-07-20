@@ -29,7 +29,7 @@ class OrdersController < ApplicationController
 
     @order.make_payment! # TODO: should move to stripe callbacks
 
-    redirect_to root_path, :notice => "成功完成付款"
+    redirect_to account_orders_path, :notice => "成功完成付款"
   end
 
   private
