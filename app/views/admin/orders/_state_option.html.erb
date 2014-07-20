@@ -1,0 +1,18 @@
+<div style="padding:10px; float:right;">
+
+<% if order.may_ship? %>
+   <%= link_to("出貨", ship_admin_order_path(order.token) , :class => "btn btn-default btn-sm", :method => :post) %>
+<% end %>
+
+<% if order.may_deliver? %>
+   <%= link_to("設為已到貨", shipped_admin_order_path(order.token), :class => "btn btn-default btn-sm", :method => :post) %>
+<% end %>
+  <% if order.may_cancel_order? %>
+  <%= link_to("取消訂單", cancel_admin_order_path(order.token) , :class => "btn btn-default btn-sm", :method => :post) %>
+<% end %>
+
+  <% if order.may_return_good? %>
+    <%= link_to("退貨", return_admin_order_path(order.token), :class => "btn btn-default btn-sm", :method => :post) %>
+<% end %>
+
+</div>
