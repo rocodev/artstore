@@ -6,10 +6,11 @@ class Cart < ActiveRecord::Base
     cart_item = cart_items.build
     cart_item.product = product
     cart_item.quantity = qty
+    cart_item.save
   end
 
   def total_price
-    items.inject(0) {|sum,item| sum + item.price}
+    cart_items.inject(0) {|sum,item| sum + item.product.price * item.quantity}
   end
 
   def clear!
