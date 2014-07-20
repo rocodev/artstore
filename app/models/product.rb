@@ -27,4 +27,17 @@ class Product < ActiveRecord::Base
 	def photos_are_empty?
 		photos.empty?
 	end
+
+	def out_of_stock?
+		quantity==0
+	end
+
+	def liquidate_inventory!(sold_quantity)
+		self.quantity -= sold_quantity
+		self.save
+	end
+
+	def product_enough?(cart_item_quantity)
+		 self.quantity >= cart_item_quantity
+	end
 end

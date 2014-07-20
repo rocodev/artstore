@@ -24,17 +24,18 @@ class Order < ActiveRecord::Base
 	before_create :generate_token
 
 	def build_item_cache_from_cart(cart)
-		cart.items.each do |cart_item|
+		cart.cart_items.each do |cart_item|
 			item = items.build
-			item.product_name = cart_item.title
-			item.quantity = 1
-			item.price = cart_item.price
+			item.product_name = cart_item.product.title
+			item.quantity = cart_item.quantity
+			item.price = cart_item.product.price
 			item.save
 		end
 	end
 
 	def calculate_total!(current_cart)
 		self.total = current_cart.total_price
+		self.save
 	end
 
 	def generate_token

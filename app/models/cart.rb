@@ -29,5 +29,22 @@ class Cart < ActiveRecord::Base
 		#items.inject(0) {|sum, item| sum + item.price}
 	end
 
+	def empty_cart!
+		self.cart_items.each do |cart_item|
+			@product = cart_item.product
+			@product.liquidate_inventory!(cart_item.quantity)
+		end
+		self.destroy
+	end
+
+	def cart_items_quantity_is_legal?
+		self.cart_items.each do |cart_item|
+			@product = cart_item.product
+			if !@product.product_enough?(cart_item.quantity)
+				return false
+			end
+		end
+		return true
+	end
 
 end
