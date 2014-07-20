@@ -1,0 +1,20 @@
+<h2>訂單列表 </h2>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>生成時間</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+    <tr>
+      <td> <%= render_order_link(order) %> </td>
+      <td> <%= render_order_created_time(order) %> </td>
+    </tr>
+    <% end %>
+
+  </tbody>
+</table>
