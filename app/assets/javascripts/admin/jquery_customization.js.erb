@@ -51,6 +51,40 @@ $(document).on('ready page:load', function(){
   } 
 
 
+
+  //initialize state td
+  var tds = $('td.td_aasm_state');
+  $.each( tds , function(td){
+  	nowstate = $(this).attr('data_nowstate');
+  	setector_str = "li[data_state=" + nowstate + "]";
+  	$(this).find(setector_str).addClass("active");
+
+  	
+  });
+
+  //initialize state li
+  var lis = $('div.pagination li');
+	$.each( lis , function(li){
+
+		$(this).on('click', function(){
+			console.log(li_siblings);
+			var li_siblings = $(this).siblings("li.active");
+			li_siblings.removeClass("active");
+			$(this).addClass("active");
+
+			var div = $(this).closest("div.pagination");
+			var form = div.siblings("form");
+			var input_text = form.find("input[type='text']");
+			var state = $(this).attr("data_state");
+			input_text.attr("value" , state);
+			form.submit();
+		});
+	});
+
+  
+
+
+
 	//var tmpl = '<div class="input file optional photo_image form-group"><label class="file optional" for="photo_image">上傳圖片</label><input class="file optional form-control" id="photo_image" name="photo[image]" type="file"></div><label class="file optional" for="photo_image">上傳圖片</label><input class="file optional form-control" id="photo_image" name="photo[image]" type="file"></div>'
 
 });

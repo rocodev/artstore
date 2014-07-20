@@ -54,13 +54,18 @@ class Order < ActiveRecord::Base
 		self.paid
 	end
 
+	def is_failed?
+		self.aasm_state=="order_cancelled" || self.aasm_state=="good_returned"
+	end
+
 	include AASM
 
 	aasm do
 		state :order_placed, :initial => true
+		
 		state :paid, :after_commit => :pay!
 		event :make_payment do
-			transitions :form => :order_placed, :to => :paid
+			transitions :from => :order_placed, :to => :paid
 		end
 
 		state :shipping
@@ -74,8 +79,8 @@ class Order < ActiveRecord::Base
 		end
 
 		state :order_cancelled
-		event :cancell_order do
-			transitions :ftom => [:order_placed, :paid], :to => :order_cancelled
+		event :cancel_order do
+			transitions :from => [:order_placed, :paid], :to => :order_cancelled
 		end
 
 		state :good_returned

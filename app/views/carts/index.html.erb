@@ -30,23 +30,13 @@
             <td>
 
               <div class="form-group">
-                <%= simple_form_for cart_item, :remote => true, :url => cart_item_path(cart_item), :html=>{:class=>""} do |f| %>
+                <%= simple_form_for cart_item, :remote => true, :url => cart_item_path(cart_item), :html=>{:class=>"hide"} do |f| %>
                 <%= f.input :quantity %>
                 <%end%>
 
                 <%=text_field_tag( "spinner", 1 ,:id => "spinner-01", :class=> "spinner" , :type=>"text", :data_max => cart_item.product.quantity , :data_start => cart_item.quantity)%>
               </div>
 
-
-
-              <%#= simple_form_for cart_item, :url => cart_item_path(cart_item) do |f| %>
-
-                  <%#= f.input :quantity, :input_html=>{:class=>"form-control", :value=>cart_item.quantity}, :wrapper_html=>{:class=>"form-group"}, :label=>"價格" %>
-                  <div class="form-group">
-                    <%#= f.submit "確認修改" ,:class => "btn btn-primary"%>
-                  </div>
-
-              <%#end%>
             </td>
 
             <td> <%= link_to 'delete', remove_from_cart_product_path(cart_item.product), :method => :delete ,  :class=> "btn btn-primary btn-lg btn-danger"%></td>
