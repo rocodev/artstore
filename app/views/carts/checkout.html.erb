@@ -11,13 +11,14 @@
         </tr>
       </thead>
       <tbody>
-        <% current_cart.items.each do |product| %>
+        <% current_cart.cart_items.each do |cart_item| %>
         <tr>
           <td>           
 
-            <%= link_to(product.title, admin_product_path(product)) %>
+            <%= link_to(cart_item.product.title, admin_product_path(cart_item.product)) %>
           </td>
-          <td> <%= product.price %> </td>
+          <td> <%= cart_item.product.price %> </td>
+          <td> <%= cart_item.quantity %> </td>
         </tr>
         <% end %>
 
