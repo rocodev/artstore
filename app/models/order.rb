@@ -50,6 +50,10 @@ class Order < ActiveRecord::Base
 		self.update_column(:paid, true)
 	end
 
+	def is_pay?
+		self.paid
+	end
+
 	include AASM
 
 	aasm do

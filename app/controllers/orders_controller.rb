@@ -30,7 +30,7 @@ class OrdersController < ApplicationController
 
 			#empty cart and liquidate inventories after payment
 			current_cart.empty_cart!
-			redirect_to root_path, :notice => "成功完成付款"
+			redirect_to account_orders_path, :notice => "成功完成付款"
 		else
 			redirect_to carts_path, :notice => "Sorry,存貨不足"
 		end
