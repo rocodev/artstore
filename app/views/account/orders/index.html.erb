@@ -1,0 +1,26 @@
+<div class="row">
+  <div class="col-md-12">
+
+    <h2> 訂單資料 </h2>
+
+    <table class="table table-bordered table-hover">
+      <thead >
+        <tr class='warning'>
+          <th>訂單編號</th>
+          <th>訂單狀態</th>
+          <th>訂貨價格</th>
+          <th>付費方式</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @order.each do |order |  %>
+        <tr>
+          <td><%= order.id%></td>
+          <td><%= order.aasm_state%></td>
+          <td><%= order.total %></td>
+          <td><%= order.paid %></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+
