@@ -15,9 +15,9 @@ Rails.application.routes.draw do
     collection do
       post :checkout
     end
+    resources :items, :controller => "cart_items"
   end
 
-  resources :cart_items
 
   resources :orders do
     member do
