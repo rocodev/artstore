@@ -1,0 +1,15 @@
+<div class="page-header">
+  <h1>商品總覽</h1>
+</div>
+<div class="marketing">
+  <% @products.each{ |product| %>
+      <div class="col-lg-4">
+        <img class="img" src="<%= product.getThumb %>" alt="Generic placeholder image" style="width: 140px; height: 140px;">
+        <h2><%= product[:title] %></h2>
+        <p><%= product[:description] %></p>
+        <p>
+          <%= link_to "商品細節 »", {:controller =>'products', :action =>'show',:id=>product[:id]},class:"btn btn-default"%>
+        </p>
+      </div>
+  <%}%>
+</div>
