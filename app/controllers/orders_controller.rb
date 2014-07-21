@@ -8,6 +8,8 @@ class OrdersController < ApplicationController
 		if @order.save
 			@order.build_item_cache_from_cart(current_cart)
 			@order.calculate_total!(current_cart)
+
+			OrderMailer.notify_order_placed(@order).deliver
 			redirect_to order_path(@order.token)
 		else
 			#cross controller
@@ -30,6 +32,9 @@ class OrdersController < ApplicationController
 
 			#empty cart and liquidate inventories after payment
 			current_cart.empty_cart!
+
+			#send email to tell user payment is successful
+			OrderMailer.notify_after_payment(@order).deliver
 			redirect_to account_orders_path, :notice => "成功完成付款"
 		else
 			redirect_to carts_path, :notice => "Sorry,存貨不足"

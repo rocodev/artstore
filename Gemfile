@@ -63,6 +63,8 @@ group :developmet, :test do
 	gem 'guard-livereload'
 	gem 'annotate', '~> 2.6.5'
 	gem 'mysql2'
+	gem 'letter_opener', '~> 1.2.0'
+	gem 'roadie', '~> 3.0.0'
 end
 
 
