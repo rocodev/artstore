@@ -14,7 +14,6 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-
+.DS_Store
 public/uploads
-config/database.yml
 config/config.yml
