@@ -1,0 +1,12 @@
+<div class="row featurette">
+  <div class="col-md-5">
+    <img class="featurette-image img-responsive" src="<%= @product.getPhoto %>" alt="Generic placeholder image" style="width: 500px; height: 500px;">
+  </div>
+  <div class="col-md-7">
+    <h2 class="featurette-heading"><%= @product[:title] %></h2>
+    <p class="lead"><%= @product[:description] %></p>
+    <p class="lead">數量 : <%= @product[:quantity] %></p>
+    <p class="lead">價錢 : <span style="color: red;font-size: 2em;">$<%= @product[:price] %></span></p>
+    <%= link_to("加入購物車", add_to_cart_product_path(@product) , :method => :post , :class => "btn btn-primary btn-lg btn-danger") %>
+  </div>
+</div>
