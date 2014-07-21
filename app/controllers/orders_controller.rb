@@ -6,10 +6,7 @@ class OrdersController < ApplicationController
     @order = current_user.orders.build(order_params)
 
     if @order.save
-      @order.build_item_cache_from_cart(current_cart)
-      @order.calculate_total!(current_cart)
-      current_cart.clear!
-      OrderMailer.notify_order_placed(@order).deliver
+      OrderPlacingService.new(current_cart, @order).place_order!
 
       redirect_to order_path(@order.token)
     else
@@ -25,11 +22,6 @@ class OrdersController < ApplicationController
 
   def pay_with_credit_card
     @order =  current_user.orders.find_by_token(params[:id])
-    @order.set_payment_with!("credit_card")
-
-    @order.make_payment! # TODO: should move to stripe callbacks
-
-    redirect_to account_orders_path, :notice => "成功完成付款"
   end
 
   private

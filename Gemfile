@@ -28,6 +28,7 @@ gem 'spring',        group: :development
 
 
 gem "devise"
+gem "stripe"
 
 
 gem "bootstrap-sass"
@@ -37,6 +38,11 @@ gem "mini_magick"
 
 gem "aasm"
 
+gem 'settingslogic'
+
+gem 'ransack'
+
+gem 'sidekiq'
 
 group :development do 
   gem "annotate"

@@ -1,0 +1,14 @@
+defaults: &defaults
+  app_name: "ArtStore"
+  stripe:
+  	secret_key: 
+  	publishable_key: 
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
+  
