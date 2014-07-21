@@ -1,0 +1,2 @@
+      invoke  active_record
+      create    db/migrate/20140718120626_add_column_aasm_state_to_orders.rb

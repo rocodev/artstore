@@ -1,0 +1,46 @@
+ 
+<div class="row">
+	<div class="col-md-offset-1 col-md-3 img-box">
+
+    <%#= render(:partial=>"common/slide", :locals=>{:photos => @photos}) %>
+    <%= render(:partial=>"common/slide", :locals=>{:product => @product}) %>
+
+	</div>
+
+	<div class="col-md-7">
+
+	  	<%= link_to("Create new photo", new_admin_product_photo_path(@product), :class=> 'btn btn-info btn-sm')%>
+
+	  	<%= link_to("Edit photo", edit_admin_product_photo_path(@product,@photo), :class=> 'btn btn-info btn-sm') if !@photo.nil?%>
+
+	  	<%= link_to("Update Product", edit_admin_product_path(@product), :class=> 'btn btn-info btn-sm')%>
+
+	  	<%= link_to("Delete Product", admin_product_path(@product), :method=>:delete, :class=> 'btn btn-danger btn-sm')%>
+
+	  	<hr>
+
+
+	  <h2><%= @product.title %></h2>
+		<h4><%= @product.description %></h4>
+		<br>
+		<br>
+		<h4>數量： <%= @product.quantity %></h4>
+
+		<div class="product-price">
+		 $ <%= render_product_price(@product)%>
+		</div>
+
+
+		<div class="pull-right"><%=link_to("加入購物車","#", :class=> "btn btn-danger btn-lg") %></div>
+	</div>
+
+</div>
+
+<hr>
+
+
+
+
+
+
+

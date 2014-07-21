@@ -1,0 +1,10 @@
+<div class="col-xs-6 col-md-3">
+	<div class="group">
+
+		<%= link_to product_path(product) do%>
+			<%=image_tag render_product_photo(product.default_photo), :class=> "img-rounded"%>
+		<%end%>
+	</div>
+	
+	<%= render_product_name(product)%>
+</div>
