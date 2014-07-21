@@ -39,7 +39,7 @@ gem "mini_magick"
 gem "aasm"
 
 gem 'settingslogic'
-
+gem 'will_paginate'
 gem 'ransack'
 
 gem 'sidekiq'

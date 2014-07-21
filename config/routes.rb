@@ -4,8 +4,8 @@ Rails.application.routes.draw do
 
   namespace :admin do 
     resources :products
-    resources :orders do
-      member do
+    resources :orders do 
+      member do 
         post :cancel
         post :ship
         post :shipped
@@ -14,13 +14,16 @@ Rails.application.routes.draw do
     end
   end
 
-  namespace :account do
+  namespace :account do 
     resources :orders
   end
 
   resources :products do 
     member do 
       post :add_to_cart
+    end
+    collection do 
+      post :search
     end
   end
 
@@ -37,6 +40,7 @@ Rails.application.routes.draw do
     member do 
       get :pay_with_credit_card
     end
+
     resources :card_charges
   end
 

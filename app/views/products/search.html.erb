@@ -1,0 +1,9 @@
+<div class="row">
+
+  <h2> 搜尋字串: <%= @query_string %> </h2>
+
+  <hr>
+
+  <%= render :partial => "product_item", :collection => @products , :as => :product %> 
+
+</div>
