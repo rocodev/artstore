@@ -9,4 +9,9 @@ class Product < ActiveRecord::Base
   def getThumb
     self.photos.first.image_url(:thumb).to_s
   end
+
+  def default_photo
+    photos.first
+  end
+
 end

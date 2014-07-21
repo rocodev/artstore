@@ -7,6 +7,6 @@
     <p class="lead"><%= @product[:description] %></p>
     <p class="lead">數量 : <%= @product[:quantity] %></p>
     <p class="lead">價錢 : <span style="color: red;font-size: 2em;">$<%= @product[:price] %></span></p>
-    <a class="btn btn-danger" href="#" style="float: right;">加入購物車</a>
+    <%= link_to("加入購物車", add_to_cart_product_path(@product) , :method => :post , :class => "btn btn-primary btn-lg btn-danger") %>
   </div>
 </div>

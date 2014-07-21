@@ -11,7 +11,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140710023825) do
+ActiveRecord::Schema.define(version: 20140715070934) do
+
+  create_table "cart_items", force: true do |t|
+    t.integer  "cart_id"
+    t.integer  "product_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "quantity",   default: 1
+  end
+
+  create_table "carts", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "order_infos", force: true do |t|
+    t.integer  "order_id"
+    t.string   "billing_name"
+    t.string   "billing_address"
+    t.string   "shipping_name"
+    t.string   "shipping_address"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "order_items", force: true do |t|
+    t.string   "product_name"
+    t.float    "price"
+    t.integer  "quantity"
+    t.integer  "order_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "orders", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "total"
+    t.boolean  "paid",           default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "token"
+    t.string   "payment_method"
+    t.string   "aasm_state",     default: "order_placed"
+  end
+
+  add_index "orders", ["aasm_state"], name: "index_orders_on_aasm_state"
+  add_index "orders", ["token"], name: "index_orders_on_token"
 
   create_table "photos", force: true do |t|
     t.integer  "product_id"
