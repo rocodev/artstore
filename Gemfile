@@ -38,6 +38,10 @@ gem "mini_magick"
 gem 'simple_form'
 gem 'aasm'
 
+#debug
+gem 'binding_of_caller'
+gem 'better_errors'
+
 
 
 

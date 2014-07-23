@@ -10,10 +10,11 @@
   <%= @product.description  %><br><br><br>
   數量:<%= @product.quantity  %><br>
   <h2 style='color: red'><strong>$ <%= @product.price  %></strong></h2>
-    
-    <%= link_to "清空購物車",cart_deleteCart_path(current_cart), class: "btn btn-warning"%>
+    <% if @product.quantity > 0 %>
     <%= link_to "加入購物車",add_to_cart_product_path(@product),:method=>:post, class: "btn btn-danger" %>
-
+    <% else %>
+      <%= link_to "此產品銷售完畢，目前無法購買",product_path, class: "btn btn-warning btn-sm" %>
+    <% end %>
     <br> <br>
     <% @photos.each do |photo| %>
     <%= image_tag photo.image.url(:ss)%>

@@ -1,28 +1,29 @@
 <div class="row">
   <div class="col-md-12">
 
-    <h2> 訂單資料 </h2>
+    <h2> 會員訂單資料 </h2>
 
     <table class="table table-bordered table-hover">
       <thead >
         <tr class='active'>
           <th>訂單編號</th>
+          <th>訂單日期</th>
           <th>訂單狀態</th>
           <th>訂貨價格</th>
           <th>付費方式</th>
-          <th>詳細資料</th>
+          <th>詳細明細</th>
         </tr>
       </thead>
       <tbody>
         <% @order.each do |order |  %>
         <tr>
           <td><%= order.id%></td>
+          <td><%= order.created_at%></td>
           <td><%= order.aasm_state%></td>
           <td><%= order.total %></td>
           <td><%= order.payment_method %></td>
-          <td><%= link_to "詳細資料",account_orderitem_path(order.id)%></td>
+          <td><%= link_to "詳細資料",admin_orderitem_path(order.id)%></td>
         </tr>
         <% end %>
       </tbody>
     </table>
-

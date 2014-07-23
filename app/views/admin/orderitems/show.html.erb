@@ -1,0 +1,68 @@
+
+<div class="row">
+  <div class="col-md-12">
+
+    <h2> 訂單明細資料 </h2>
+    <br>
+    <span>建立時間:<%=@orders.created_at%></span>
+    <br>
+    <span>進度:<%=@orders.aasm_state%></span>
+    <br>
+    <span>付款方式:<%=@orders.payment_method%></span>
+    
+    <div class="progress" style="width:200px">
+      <div class="progress-bar" style="width: 25%">
+       己下訂
+      </div>
+      <div class="progress-bar progress-bar-warning progress-bar-striped" style="width: 25%">
+        已付款
+      </div>
+      <div class="progress-bar progress-bar-danger" style="width: 25%">
+        出貨中
+      </div>
+      <div class="progress-bar progress-bar-striped active" style="width: 25%">
+        到貨
+      </div>
+      完成
+    </div>
+
+    <table class="table table-striped table-bordered">
+        <tbody>
+          <tr>
+            <td> 訂購人 </td>
+          </tr>
+          <tr>
+            <td>
+              <%= @order_info.billing_name %> - <%= @order_info.billing_address %>
+            </td>
+          </tr>
+          <tr>
+            <td>收件人</td>
+          </tr>
+          <tr>
+            <td>
+              <%= @order_info.shipping_name %> - <%= @order_info.shipping_address %>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+
+    <table class="table table-bordered table-hover">
+      <thead >
+        <tr class='active'>
+          <th>產品名稱</th>
+          <th>訂貨價格</th>
+          <th>數量</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @items.each do |item |  %>
+        <tr>
+          <td><%= item.product_name%></td>
+          <td><%= item.price %></td>
+          <td><%= item.quantity%></td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+     <%= link_to "回清單", admin_orders_path, class: "btn btn-sm btn-info" %>

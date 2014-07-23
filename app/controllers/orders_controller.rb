@@ -26,7 +26,8 @@ class OrdersController < ApplicationController
     @order.set_payment_with!("credit_card") 
     #@order.pay! 
     @order.make_payment!
-    redirect_to root_path :notice=>"成功完成付款"
+    redirect_to root_path flash[:notice] = "成功完成付款"
+    current_cart.clear!
   end
 
 

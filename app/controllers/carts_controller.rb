@@ -19,12 +19,14 @@ class CartsController < ApplicationController
 
 
   def deleteCart
-    
-    cart = Cart.find_by(id: params[:cart_id])
-    if cart.present?
-      cart.destroy
-    end
-    session[params[:cart_id]] = nil
+    # 可以用 clear,delete_all,destroy_all
+    #current_cart.items.destroy_all
+    current_cart.clear!
+    # cart = Cart.find_by(id: params[:cart_id])
+    # if cart.present?
+    #   cart.destroy
+    # end
+    # session[params[:cart_id]] = nil
     redirect_to root_path
   end
 

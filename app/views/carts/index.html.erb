@@ -10,6 +10,7 @@
           <th></th>
           <th>單價</th>
           <th>數量</th>
+          <th>小計</th>
           <th>移除</th>
         </tr>
       </thead>
@@ -19,16 +20,19 @@
         <tr>
           <td><%= image_tag product.default_photo.image.url(:sm)%></td>
           <td>
-            <%= link_to(product.title, admin_product_path(product)) %>
+            <%= link_to(product.title, product_path(product)) %>
           </td>
           <td> <%= product.price %> </td>
           <td> 
             <%#= f.hidden_field :id, { :value => product.id } %>
             <%= f.select product.id, options_for_select((1..10).collect{ |u| [u,u]}) %>
+            <%#= f.select :quantity, [1,2,3,4,5] %>
+          </td>
+          <td> 
+            
           </td>
           <td> <%= link_to "從購物車移除", remove_from_cart_product_path(product),:method=> :delete, :class=> "btn btn-danger btn-sm" %> </td>
         </tr>
-        <% #end %>
         <% end %>
       </tbody>
     </table>
@@ -40,6 +44,7 @@
       </div>
       <hr>
       <div class="checkout">
+        <%= link_to "清空購物車",cart_deleteCart_path(current_cart), class: "btn btn-warning btn-lg pull-right"%>
         <%= f.submit "確認結賬", :class => "btn btn-primary btn-lg btn-danger pull-right" %>
 
       </div>

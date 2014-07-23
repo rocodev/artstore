@@ -6,10 +6,14 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :products
+    resources :orders
+    resources :orderitems
+
   end
 
   namespace :account do
     resources :orders
+    resources :orderitems
   end
 
   resources :products do
