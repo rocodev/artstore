@@ -1,0 +1,9 @@
+<%= image_tag product.default_photo.image.url(:sm)%>
+<div class="caption">
+  <h3><%= link_to render_product_name(product),product_path(product) %></h3>
+  <p><%= product.description %></p>
+  <p>
+    <span>數量: <%= product.quantity %> </span>
+    <span>價格: <strong><%= product.price %></strong></span>
+  </p>
+</div>
