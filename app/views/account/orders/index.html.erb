@@ -7,6 +7,7 @@
       <thead >
         <tr class='active'>
           <th>訂單編號</th>
+          <th>訂貨時間</th>
           <th>訂單狀態</th>
           <th>訂貨價格</th>
           <th>付費方式</th>
@@ -17,7 +18,8 @@
         <% @order.each do |order |  %>
         <tr>
           <td><%= order.id%></td>
-          <td><%= order.aasm_state%></td>
+          <td><%= render_order_created_time(order)%></td>
+          <td><%= render_order_state(order)%></td>
           <td><%= order.total %></td>
           <td><%= order.payment_method %></td>
           <td><%= link_to "詳細資料",account_orderitem_path(order.id)%></td>

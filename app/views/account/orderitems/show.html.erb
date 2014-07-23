@@ -4,9 +4,9 @@
 
     <h2> 訂單明細資料 </h2>
     <br>
-    <span>建立時間:<%=@orders.created_at%></span>
+    <span>建立時間:<%=render_order_created_time(@orders) %></span>
     <br>
-    <span>進度:<%=@orders.aasm_state%></span>
+    <span>進度:<%=render_order_state(@orders)%></span>
     <br>
     <span>付款方式:<%=@orders.payment_method%></span>
     

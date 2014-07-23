@@ -6,9 +6,10 @@
     <br>
     <span>建立時間:<%=@orders.created_at%></span>
     <br>
-    <span>進度:<%=@orders.aasm_state%></span>
+    <span>進度:<%=render_order_state(@orders)%></span>
     <br>
     <span>付款方式:<%=@orders.payment_method%></span>
+     <%= render_order_options_for_admin(@orders) %>
     
     <div class="progress" style="width:200px">
       <div class="progress-bar" style="width: 25%">
