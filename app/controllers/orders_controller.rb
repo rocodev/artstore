@@ -18,9 +18,11 @@ class OrdersController < ApplicationController
 	end
 
 	def show
-		@order = current_user.orders.find_by_token(params[:id])
+		@order = current_user.orders.find_by_token(params[:id])		
 		@order_info = @order.info
 		@order_items = @order.items
+
+		
 	end
 
 	def pay_with_credit_card
@@ -35,6 +37,7 @@ class OrdersController < ApplicationController
 
 			#send email to tell user payment is successful
 			OrderMailer.notify_after_payment(@order).deliver
+
 			redirect_to account_orders_path, :notice => "成功完成付款"
 		else
 			redirect_to carts_path, :notice => "Sorry,存貨不足"

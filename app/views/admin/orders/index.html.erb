@@ -22,7 +22,7 @@
           <%else%>
             <tr>
           <%end%>     
-            <td><%= link_to order.token, order_path(order.token)%></td>
+            <td><%= link_to order.token, admin_order_path(order.token)%></td>
             <td> <%= order.total %> </td>          
             <td> <%= order.payment_method %></td>   
 

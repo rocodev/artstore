@@ -13,7 +13,10 @@
  
  *= require_self
  *= require jquery-ui/spinner
- *= require_tree .
+ *= require products
+ *= require bootstrap_and_customization
+ *= require flat-ui
+ * require_tree .
  */
 
 

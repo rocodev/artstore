@@ -13,7 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require turbolinks
-//= require_tree .
 //= require bootstrap-sprockets
 //= require cocoon
 //= require jquery-ui/spinner
+//= require jquery_customization
+// require_tree .

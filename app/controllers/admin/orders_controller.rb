@@ -3,6 +3,12 @@ class Admin::OrdersController < ApplicationController
 		@orders = Order.order("created_at DESC")
 	end
 
+  def show
+    @order =  Order.find_by_token(params[:id])
+    @order_info = @order.info
+    @order_items = @order.items
+  end
+
 
 	def update		
 		@order = Order.find_by_token(params[:id])
@@ -20,8 +26,8 @@ class Admin::OrdersController < ApplicationController
 		rescue
 			# Why I couldn't use render?
 			#flash[:notice] =  "訂單狀態更改成功"
-			#render :index
-			redirect_to admin_orders_path , :alert => "Sorry,訂單狀態的更改不符合程序"
+			render :index
+			# redirect_to admin_orders_path , :alert => "Sorry,訂單狀態的更改不符合程序"
 		end
 
 	end
