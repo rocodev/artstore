@@ -17,3 +17,4 @@
 
 config/settings.yml
 config/database.yml
+public/uploads

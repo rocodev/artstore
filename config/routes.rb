@@ -1,14 +1,47 @@
 Rails.application.routes.draw do
 
 
+  get 'flatuipro_demo/index'
+
   devise_for :users
   namespace :admin do
     resources :products do
       resources :photos
     end
+    resources :orders
+    #resources :orders do
+    #  member do
+    #    post :update_state
+    #  end
+    #end
   end
 
-  resources :products
+  resources :products do
+    member do
+      post :add_to_cart
+      delete :remove_from_cart
+    end
+  end
+
+  resources :carts do
+    collection do
+      delete :remove_all
+      post :checkout
+    end
+  end
+
+  resources :orders do
+    member do
+      get :pay_with_credit_card
+    end
+  end
+
+  resources :cart_items
+
+  namespace :account do
+    resources :orders
+  end
+
 
   root :to => "products#index"
 

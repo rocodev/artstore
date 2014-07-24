@@ -26,6 +26,10 @@
 		<br>
 		<h4>數量： <%= @product.quantity %></h4>
 
+		<div class="product-price">
+		 $ <%= render_product_price(@product)%>
+		</div>
+
 
 		<div class="pull-right"><%=link_to("加入購物車","#", :class=> "btn btn-danger btn-lg") %></div>
 	</div>

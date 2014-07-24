@@ -54,11 +54,17 @@ gem 'carrierwave'
 gem 'mini_magick', '~> 3.7.0'
 gem 'cocoon', '~> 1.2.6'
 gem 'settingslogic', '~> 2.0.9'
+gem 'aasm', '~> 3.3.1'
+
+# add for snipper 
+gem 'jquery-ui-rails', '~> 5.0.0'
 
 group :developmet, :test do
 	gem 'guard-livereload'
 	gem 'annotate', '~> 2.6.5'
 	gem 'mysql2'
+	gem 'letter_opener', '~> 1.2.0'
+	gem 'roadie', '~> 3.0.0'
 end
 
 
