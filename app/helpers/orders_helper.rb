@@ -21,7 +21,15 @@ module OrdersHelper
 	end
 
 	def render_order_state(order)
-		t("orders.order_state.#{order.aasm_state}")
+		span_class = "label "
+
+		if order.is_failed?
+			span_class += "label-danger"
+		else
+			span_class += "label-info"	
+		end
+		content_tag(:span , t("orders.order_state.#{order.aasm_state}")  ,:class=>span_class)
+		
 	end
 
 	def render_order_payment_method(order)

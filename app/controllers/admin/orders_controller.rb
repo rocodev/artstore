@@ -43,7 +43,7 @@ class Admin::OrdersController < AdminController
 	end
 
 	def cancel
-		@order.cancell_order!
+		@order.cancel_order!
 		redirect_to :back
 	end
 
