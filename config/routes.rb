@@ -8,20 +8,17 @@ Rails.application.routes.draw do
     resources :products do
       resources :photos
     end
-    resources :orders
-    #resources :orders do
-    #  member do
-    #    post :update_state
-    #  end
-    #end
-  end
-
-  resources :products do
-    member do
-      post :add_to_cart
-      delete :remove_from_cart
+    resources :orders do
+       member do 
+        post :cancel
+        post :ship
+        post :shipped
+        post :return
+      end
     end
   end
+
+  resources :products
 
   resources :carts do
     collection do
@@ -36,7 +33,12 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :cart_items
+  resources :cart_items do
+    member do
+      post :add_to_cart
+      delete :remove_from_cart
+    end
+  end
 
   namespace :account do
     resources :orders

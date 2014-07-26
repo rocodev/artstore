@@ -13,15 +13,21 @@ class Cart < ActiveRecord::Base
 	has_many :items, :through => :cart_items, :source => :product
 
 	def add_product_to_cart(product)
-		items << product
+		#items << product
+		cart_item = self.cart_items.build
+		cart_item.product = product
+		cart_item.quantity = 1
+		cart_item.save
 	end
 
-	def remove_product_from_cart!(product)
-		items.destroy(product)
+	def remove_product_from_cart!(cart_item)
+		#items.destroy(product)
+		self.cart_items.destroy(cart_item)
 	end
 
 	def remove_all_product_from_cart!
-		items.clear
+		#items.clear
+		self.cart_items.clear
 	end
 
 	def total_price

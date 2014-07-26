@@ -17,7 +17,7 @@
       <tbody>
         <% current_cart.cart_items.each do |cart_item| %>
         <tr>
-          <td><%=image_tag( render_product_photo(cart_item.product.default_photo)) %></td>
+          <td><%= render_product_photo(cart_item.product.default_photo)%></td>
 
             <td> 
               
@@ -39,7 +39,7 @@
 
             </td>
 
-            <td> <%= link_to 'delete', remove_from_cart_product_path(cart_item.product), :method => :delete ,  :class=> "btn btn-primary btn-lg btn-danger"%></td>
+            <td> <%= link_to 'delete', remove_from_cart_cart_item_path(cart_item), :method => :delete ,  :class=> "btn btn-primary btn-lg btn-danger"%></td>
           </tr>
           <% end %>
 

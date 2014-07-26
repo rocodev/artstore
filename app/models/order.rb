@@ -21,6 +21,8 @@ class Order < ActiveRecord::Base
 
 	accepts_nested_attributes_for :info
 
+	scope :recent, -> { order("created_at DESC")}
+
 	before_create :generate_token
 
 	def build_item_cache_from_cart(cart)

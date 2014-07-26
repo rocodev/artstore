@@ -4,7 +4,7 @@ class Admin::ProductsController < AdminController
 
 
 	def index
-		@products = Product.all.order("created_at DESC").paginate(:page => params[:page], :per_page=>20)
+		@products = Product.order("created_at DESC").paginate(:page => params[:page], :per_page=>20)
 	end
 
 	def show
@@ -14,7 +14,7 @@ class Admin::ProductsController < AdminController
 	def new
 		@product = Product.new
 		@product.photos.build
-
+		#@photo = @Product.photos.new
 	end
 
 	def create

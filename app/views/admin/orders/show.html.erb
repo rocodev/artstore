@@ -2,7 +2,9 @@
    <div class="col-md-12">
 
     <h2> 訂單明細 </h2>
-
+    <div class="pull-right">
+      <%= render_order_options_for_admin(@order) %>
+    </div>
     <table class="table table-bordered">
       <thead>
         <tr>
