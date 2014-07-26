@@ -35,4 +35,9 @@ module OrdersHelper
 	def render_order_payment_method(order)
 		t("orders.payment_methods.#{order.payment_method}") 		if order.payment_method.present?
 	end
+
+	def render_stripe_public_key
+		#javascript_tag("Stripe.setPublishableKey('#{Settings.stripe.public_key}'", :type=>'text/javascript');
+	end
+
 end

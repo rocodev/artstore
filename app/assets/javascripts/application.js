@@ -17,4 +17,5 @@
 //= require cocoon
 //= require jquery-ui/spinner
 //= require jquery_customization
+//= require orders
 // require_tree .

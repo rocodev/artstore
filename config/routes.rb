@@ -31,6 +31,7 @@ Rails.application.routes.draw do
     member do
       get :pay_with_credit_card
     end
+    resources :card_charges
   end
 
   resources :cart_items do

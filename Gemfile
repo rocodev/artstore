@@ -58,13 +58,14 @@ gem 'aasm', '~> 3.3.1'
 
 # add for snipper 
 gem 'jquery-ui-rails', '~> 5.0.0'
+gem 'stripe'
+gem 'roadie'
 
 group :developmet, :test do
 	gem 'guard-livereload'
 	gem 'annotate', '~> 2.6.5'
 	gem 'mysql2'
 	gem 'letter_opener', '~> 1.2.0'
-	gem 'roadie', '~> 3.0.0'
 end
 
 
