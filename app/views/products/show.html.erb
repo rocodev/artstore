@@ -29,7 +29,7 @@
 			<% if @product.out_of_stock? %>
 					<%= link_to("Sorry,已售完", "#", :class => "btn btn-warnrng btn-lg disabled", :role=>"button") %>
 			<% else %>
-			<%= link_to("加入購物車", add_to_cart_product_path(@product), :method=>:post , :class => "btn btn-primary btn-lg")%>
+			<%= link_to("加入購物車", add_to_cart_cart_item_path(@product), :method=>:post , :class => "btn btn-primary btn-lg")%>
 			<% end %>			
 	</div>
 

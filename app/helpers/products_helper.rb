@@ -16,7 +16,7 @@ module ProductsHelper
 			image_url = "http://placehold.it/#{volume}&text=No Pic"
 		end	
 
-		return image_url
+		image_tag( image_url, :class=>"img-rounded")
 	end
 
 	def render_product_name(product)

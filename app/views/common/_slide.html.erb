@@ -9,7 +9,7 @@
 
     <%if product.photos_are_empty?%>
       <div class="item img-box">
-          <%= image_tag( render_product_photo(product.default_photo), :class=>"img-rounded")%>
+        <%= render_product_photo(product.default_photo)%>
       </div>
 
     <%else%>
