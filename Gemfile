@@ -60,6 +60,7 @@ gem 'aasm', '~> 3.3.1'
 gem 'jquery-ui-rails', '~> 5.0.0'
 gem 'stripe'
 gem 'roadie'
+gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4.1'
 
 group :developmet, :test do
 	gem 'guard-livereload'

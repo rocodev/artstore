@@ -40,4 +40,13 @@ class Product < ActiveRecord::Base
 	def product_enough?(cart_item_quantity)
 		 self.quantity >= cart_item_quantity
 	end
+
+	#def self.search(search)
+  #  if search
+  #      @product = Product.where('title LIKE ?', "%#{params[:q]}%")
+  #  else
+  #      @product = Product.all
+  #  end
+  #end
+
 end

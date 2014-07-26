@@ -18,7 +18,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :products
+  resources :products do
+    collection do
+      post :search, :to => "products#index"  
+    end
+  end
 
   resources :carts do
     collection do
