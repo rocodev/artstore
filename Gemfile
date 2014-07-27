@@ -55,12 +55,18 @@ gem 'mini_magick', '~> 3.7.0'
 gem 'cocoon', '~> 1.2.6'
 gem 'settingslogic', '~> 2.0.9'
 gem 'aasm', '~> 3.3.1'
-
-# add for snipper 
-gem 'jquery-ui-rails', '~> 5.0.0'
 gem 'stripe'
 gem 'roadie'
 gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4.1'
+
+# add for snipper 
+gem 'jquery-ui-rails', '~> 5.0.0'
+
+# add for sidekiq
+gem 'sidekiq', '~> 3.2.1'
+gem 'sinatra', require: false
+gem 'slim'
+
 
 group :developmet, :test do
 	gem 'guard-livereload'

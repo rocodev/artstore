@@ -8,6 +8,7 @@ class OrderPlacingService
 		@order.build_item_cache_from_cart(@cart)
 		@order.calculate_total!(@cart)
 		#@order.clear!
-		OrderMailer.notify_order_placed(@order).deliver
+		EmailWorker.perform_async(@order.id, 'after_placing_order')
+		#OrderMailer.notify_order_placed(@order).deliver
 	end
 end

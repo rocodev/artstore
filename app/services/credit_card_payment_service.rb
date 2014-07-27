@@ -40,8 +40,9 @@ class CreditCardPaymentService
 		#current_cart.empty_cart!
 		@cart.empty_cart!
 		#send email to tell user payment is successful
-		OrderMailer.notify_after_payment(@order).deliver
- 
+		#OrderMailer.notify_after_payment(@order).deliver
+    EmailWorker.perform_async(@order.id,'after_paying_with_credit_card')
+
     #redirect_to order_path(@order.token), :notice => "成功完成付款"
  		return
 

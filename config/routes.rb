@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
-
-  get 'flatuipro_demo/index'
+  #add for sidekiq dashboard
+  require 'sidekiq/web'
+  mount Sidekiq::Web, at: "/sidekiq"
 
   devise_for :users
   namespace :admin do
@@ -56,6 +57,8 @@ Rails.application.routes.draw do
 
 
   root :to => "products#index"
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
