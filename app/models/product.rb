@@ -7,6 +7,6 @@ class Product < ActiveRecord::Base
 
 
   def default_photo
-    photos.first
+    photos.first if photos.first
   end
 end

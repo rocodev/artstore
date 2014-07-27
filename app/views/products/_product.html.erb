@@ -1,11 +1,12 @@
 <div class="col-sm-6 col-md-4">
   <div class="thumbnail">
     <%= link_to product_path(product) do %>
-    <%= image_tag product.photos.first.image %>
+    <%= render_product_photo(product.default_photo) %>
     <% end %>
     <div class="caption">
       <h3><%= product.title %></h3>
       <p><%= product.description %></p>
+      <p>價格：<%= product.price %></p>
       <p>數量：<%= product.quantity %></p>
       <% unless product.for_sale %>
         <p><span class="label label-danger">未上架</span><p>

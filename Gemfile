@@ -40,8 +40,9 @@ gem "mini_magick"
 
 gem 'aasm'
 gem "letter_opener"
-gem "roadie"
+gem 'roadie', '~> 2.4'
 
+gem 'stripe'
 # Use unicorn as the app server
 # gem 'unicorn'
 

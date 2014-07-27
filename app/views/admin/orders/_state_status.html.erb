@@ -1,0 +1,24 @@
+<div style="padding:10px; float:right;">
+
+
+<% if order.order_placed? %>
+  <span class="label label-default">已下單</span>
+<% end %>
+<% if order.paid? %>
+  <span class="label label-default">已付款</span>
+<% end %>
+<% if order.shipping? %>
+  <span class="label label-default">送貨中</span>
+<% end %>
+<% if order.shipped? %>
+  <span class="label label-default">已到貨</span>
+<% end %>
+<% if order.order_cancelled? %>
+  <span class="label label-default">訂單已取消</span>
+<% end %>
+<% if order.good_returned? %>
+  <span class="label label-default">已退貨</span>
+<% end %>
+
+
+</div>
