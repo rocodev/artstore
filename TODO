@@ -8,7 +8,7 @@
    ☐ use sidekiq to send mail
  ✔ 訂單狀態應分為未結帳、已結帳、出貨中、已出貨、辦理退貨 @done (14-06-13 17:44)
  ☐ 身為消費者，當我用信用卡結帳後，我的信箱要能收到一張訂購完成信
-   ☐ 身為消費者，可以從信中連結查看原始訂單
+   ✔ 身為消費者，可以從信中連結查看原始訂單 @done (14-07-28 00:59)
    ☐ use sidekiq to send mail
  ✔ 身為消費者，當我在結賬後，購物⾞應自動清空 @done (14-07-21 03:03)
  ✔ 身為消費者，我可以從購物車內刪掉某些物品 @done (14-07-18 02:38)
@@ -32,8 +32,8 @@ Admin:
   ✔ Admin Should able to see admin panel link in dropdown menu @done (14-06-13 01:59)
     Product:
       ✔ Refine with Product List with table @done (14-06-13 02:14)
-      ✔ should able update image when create product @done (14-06-13 04:09)
-      ☐ should able to upload image after update
+      ✔ should be able to update image when create product @done (14-06-13 04:09)
+      ☐ should be able to upload image after update
 
 其他:
  ✔ 套 Bootstrap 版 @done (14-06-12 18:33)

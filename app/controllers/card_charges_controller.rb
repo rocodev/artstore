@@ -14,8 +14,7 @@ class CardChargesController < ApplicationController
     )
 
     if charge.successful?
-      @order.set_payment_with!("credit_card")
-      @order.make_payment! 
+      CardChargingService.new(@order).charge_card!
       redirect_to order_path(@order.token), :notice => "成功完成付款"
     else
       flash[:error] = charge.error_message
