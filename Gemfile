@@ -44,6 +44,7 @@ gem 'roadie', '~> 2.4'
 
 gem 'stripe'
 gem 'settingslogic'
+gem 'ransack'
 # Use unicorn as the app server
 # gem 'unicorn'
 

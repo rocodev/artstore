@@ -30,6 +30,18 @@
       </ul>
       
       <ul class="nav navbar-nav navbar-right">
+        <li>     
+          <%= search_form_for @search, url: search_products_path, :html => {method: 'post', class: 'navbar-form'} do |f| %>
+          <div class="form-group">
+            <%= f.search_field :title_cont, class: 'form-control', placeholder: "找產品" %>
+            <%= button_tag class: 'btn btn-info' do %>
+            <span class="glyphicon glyphicon-search"></span>
+            <% end %>
+          </div>
+          <% end %>
+
+
+        </li>
         <li> 
           <%= link_to carts_path do  %>
             購物車 <i class="glyphicon glyphicon-shopping-cart"> </i> (<%= cart_items_count(current_cart) %>)

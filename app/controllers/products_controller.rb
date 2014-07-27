@@ -4,6 +4,11 @@ class ProductsController < ApplicationController
     @products = Product.order("id DESC")
   end
 
+  def search
+    @products = @search.result
+    flash.now[:warning] = "找不到您要的商品，請再試試別的名稱～" unless @products.count > 0
+  end
+
   def show
     @product = Product.find(params[:id])
   end

@@ -4,6 +4,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   helper_method :current_cart
 
+  before_action :prepare_search
+
   def admin_required
     redirect_to root_path unless current_user.admin?
   end
@@ -22,4 +24,11 @@ class ApplicationController < ActionController::Base
     session[:cart_id] = cart.id
     cart
   end  
+
+  def prepare_search
+
+    @search = Product.search(params[:q])
+  end
+
+
 end
