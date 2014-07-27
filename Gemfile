@@ -38,3 +38,45 @@ gem 'spring',        group: :development
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+
+#customize gem
+#gem 'pry', '~> 0.10.0'
+gem 'pry-rails'
+gem 'pry-plus'
+gem "simple_form", "3.1.0rc1"
+gem 'bootstrap-sass', '~> 3.2.0.0'
+#The bootstrap-sass-rails gem is deprecated starting with version 3.1.0.0.
+#gem 'bootstrap-sass-rails', '~> 3.1.0.0'
+gem 'will_paginate' , '~> 3.0'
+gem 'will_paginate-bootstrap' 
+gem 'devise' , '~> 3.2'
+gem 'carrierwave'
+gem 'mini_magick', '~> 3.7.0'
+gem 'cocoon', '~> 1.2.6'
+gem 'settingslogic', '~> 2.0.9'
+gem 'aasm', '~> 3.3.1'
+gem 'stripe'
+gem 'roadie'
+gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4.1'
+
+# add for snipper 
+gem 'jquery-ui-rails', '~> 5.0.0'
+
+# add for sidekiq
+gem 'sidekiq', '~> 3.2.1'
+gem 'sinatra', require: false
+gem 'slim'
+
+
+group :developmet, :test do
+	gem 'guard-livereload'
+	gem 'annotate', '~> 2.6.5'
+	gem 'mysql2'
+	gem 'letter_opener', '~> 1.2.0'
+end
+
+
+
+
+
+

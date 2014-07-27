@@ -2,6 +2,11 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
+require 'letter_opener' if Rails.env.development?
+
+#add for Roodie version 3
+ROADIE_I_KNOW_ABOUT_VERSION_3 = true # Remove after Roadie 3.1
+
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)

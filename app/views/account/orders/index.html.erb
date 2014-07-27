@@ -1,0 +1,37 @@
+ <div class="row">
+   <div class="col-md-12">
+
+    <h2> 訂單明細 </h2>
+
+    <table class="table table-hover table-bordered">
+      <thead>
+        <tr>
+          <th width="30%">訂單編號</th>
+          <th>生成時間</th>
+          <th>訂單金額</th>
+          <th>訂單狀態</th>
+          <th>付款方式</th>
+          <th>取消訂單或退貨</th>
+        </tr>
+      </thead>
+      
+      <tbody>
+        <% @orders.each do |order| %>
+          <% if order.is_failed?%>
+            <tr class="danger"> 
+          <%else%>
+            <tr>
+          <%end%>     
+            <td><%= render_order_link(order)%></td>
+            <td><%= render_order_created_time(order)%></td>
+            <td> <%= order.total %> </td>
+            <td> <%= render_order_state(order) %></td>
+            <td> <%= render_order_payment_method(order) %></td>     
+            <td><%= render_order_options_for_user(order)%></td>      
+          </tr>      
+        <% end %>
+      </tbody>
+    </table>
+
+   </div>
+ </div>

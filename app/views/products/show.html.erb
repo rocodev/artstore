@@ -1,0 +1,42 @@
+<div class="row">
+	<div class="col-md-4 img-box">
+
+		<%= render(:partial=>"common/slide", :locals=>{:product => @product}) %>
+		<%#= image_tag render_product_photo(@product.default_photo, :medium), :class=> "img-rounded" %>
+	</div>
+
+
+	<div class="col-md-8">
+		<h2><%= render_product_name(@product)%></h2>
+
+		<div style="height:100px;">
+			<p>
+				<%= render_product_desc(@product) %>
+			</p>
+		</div>
+
+
+		<div>
+			數量：<%= render_product_quantity(@product)%>
+		</div>
+
+		<div class="product-price">
+		 $ <%= render_product_price(@product)%>
+		</div>
+
+		<div class="pull-right">
+
+			<% if @product.out_of_stock? %>
+					<%= link_to("Sorry,已售完", "#", :class => "btn btn-warnrng btn-lg disabled", :role=>"button") %>
+			<% else %>
+			<%= link_to("加入購物車", add_to_cart_cart_item_path(@product), :method=>:post , :class => "btn btn-primary btn-lg")%>
+			<% end %>			
+	</div>
+
+</div>
+
+
+
+
+
+

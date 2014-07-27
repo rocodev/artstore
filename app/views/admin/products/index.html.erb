@@ -1,0 +1,40 @@
+
+<h2> Product List </h2>
+
+<div class="pull-right" style="padding-bottom: 20px;">
+  <%= link_to("新增產品", new_admin_product_path, :class => "btn btn-primary btn-sm") %>
+</div>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Product Name</th>
+      <th>Product Photo</th>
+      <th>Manage Options</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+    <tr>
+      <td> 
+        <%= product.id %>
+      </td>
+
+      <td>
+        <h3><%= link_to( render_product_name(product) , admin_product_path(product))%></h3>   
+      </td>
+      <td>   
+      <%=link_to admin_product_path(product) do%>     
+          <%=render_product_photo(product.default_photo)%>
+      <%end%>    
+      </td>
+      
+      <td> <%= link_to("Edit", edit_admin_product_path(product)) %> </td>
+    </tr>
+    <% end %>
+
+  </tbody>
+</table>
+
+
