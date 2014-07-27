@@ -12,7 +12,7 @@ class Admin::OrdersController < AdminController
   end
 
   def ship
-    @order.ship!
+    OrderShippingService.new(@order).ship_order!
     redirect_to :back
   end
 
