@@ -20,9 +20,9 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     :port => 587,
     :address => 'smtp.mailgun.org',
-    :user_name => 'postmaster@sandbox33145ec1eb634185b58b1ee7332d8048.mailgun.org',
-    :password => '5py3gf3gato8',
-    :domain => 'sandbox33145ec1eb634185b58b1ee7332d8048.mailgun.org',
+    :user_name => Settings.mailgun.user_name
+    :password => Settings.mailgun.password
+    :domain => Settings.mailgun.domain
     :authentication => :plain
   }
 
