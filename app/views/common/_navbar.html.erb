@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default" role="navigation">
+<nav class="navbar navbar-default navbar-lg" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -11,8 +11,22 @@
         <li class="active">
           <%= link_to("Products", products_path) %>
         </li>
-
       </ul>
+
+
+      <%= render :partial=>'common/ransack_form', :locals=>{:q => @q}%>
+      <!--   
+      <form class="navbar-form navbar-left" action="#" role="search">
+          <div class="form-group">
+            <div class="input-group">
+              <input class="form-control" id="navbarInput-01" type="search" placeholder="Search">
+              <span class="input-group-btn">
+                <button type="submit" class="btn"><span class="glyphicon glyphicon-search"></span></button>
+              </span>            
+            </div>
+          </div>               
+      </form>
+      -->
       <ul class="nav navbar-nav navbar-right">
         <li>
           <%= link_to carts_path do %>

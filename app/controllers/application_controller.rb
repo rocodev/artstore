@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  #It's not a good solution to solve the problem about ransack
+  before_action :declare_ransack
 
 
   def admin_required
@@ -25,5 +27,11 @@ class ApplicationController < ActionController::Base
   	session[:cart_id] = cart.id
   	cart
   end
+
+  private 
+    def declare_ransack
+      @q = Product.ransack(params[:q])
+    end
+
 
 end

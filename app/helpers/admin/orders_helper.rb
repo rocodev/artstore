@@ -6,8 +6,7 @@ module Admin::OrdersHelper
 			when "order_placed"
 				link_to("取消訂單", cancel_admin_order_path(order.token), :class=>link_class, :method => :post)
 			when "paid"
-				link_to("取消訂單", cancel_admin_order_path(order.token), :class=>link_class, :method => :post)
-				link_to("出貨", ship_admin_order_path(order.token), :class=>link_class, :method => :post)
+				link_to("取消訂單", cancel_admin_order_path(order.token), :class=>link_class, :method => :post)+ link_to("出貨", ship_admin_order_path(order.token), :class=>link_class, :method => :post)
 			when "shipping"
 				link_to("設為到貨", shipped_admin_order_path(order.token), :class=>link_class, :method => :post)
 			when "shipped"

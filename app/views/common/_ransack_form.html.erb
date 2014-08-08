@@ -1,0 +1,12 @@
+  <%= search_form_for q ,:url=> search_products_path, :method=> :post,:class=>"navbar-form navbar-left", :role=>"search" do |f| %>
+    <div class="form-group">
+        <div class="input-group">
+          <%= f.search_field :title_or_description_cont, :class=>"form-control", :id=>"navbarInput-01", :type=>"search", :placeholder=>"Search"%>
+          <span class="input-group-btn">
+            <%=f.submit 'Go',:class=>"btn" do%>
+              <span class="glyphicon glyphicon-search"></span>
+            <%end%>
+          </span>  
+        </div>
+    </div>
+  <%end%>

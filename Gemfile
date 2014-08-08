@@ -55,16 +55,28 @@ gem 'mini_magick', '~> 3.7.0'
 gem 'cocoon', '~> 1.2.6'
 gem 'settingslogic', '~> 2.0.9'
 gem 'aasm', '~> 3.3.1'
+gem 'stripe'
+gem 'roadie'
+gem 'ransack', github: 'activerecord-hackery/ransack', branch: 'rails-4.1'
 
 # add for snipper 
 gem 'jquery-ui-rails', '~> 5.0.0'
 
+# add for sidekiq
+gem 'sidekiq', '~> 3.2.1'
+gem 'sinatra', require: false
+gem 'slim'
+
+#add for capistrano
+gem 'capistrano', '~> 3.2.0'
+gem 'capistrano-ext'
+
+gem 'mysql2'
+
 group :developmet, :test do
 	gem 'guard-livereload'
 	gem 'annotate', '~> 2.6.5'
-	gem 'mysql2'
 	gem 'letter_opener', '~> 1.2.0'
-	gem 'roadie', '~> 3.0.0'
 end
 
 

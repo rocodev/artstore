@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
-
-  get 'flatuipro_demo/index'
+  #add for sidekiq dashboard
+  require 'sidekiq/web'
+  mount Sidekiq::Web, at: "/sidekiq"
 
   devise_for :users
   namespace :admin do
@@ -18,7 +19,11 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :products
+  resources :products do
+    collection do
+      post :search, :to => "products#index"  
+    end
+  end
 
   resources :carts do
     collection do
@@ -31,6 +36,7 @@ Rails.application.routes.draw do
     member do
       get :pay_with_credit_card
     end
+    resources :card_charges
   end
 
   resources :cart_items do
@@ -41,11 +47,18 @@ Rails.application.routes.draw do
   end
 
   namespace :account do
-    resources :orders
+    resources :orders do
+      member do
+        post :cancel
+        post :return
+      end
+    end
   end
 
 
   root :to => "products#index"
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

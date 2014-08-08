@@ -1,5 +1,5 @@
 class OrderMailer < ActionMailer::Base
-  default from: "ryan@artstore.com"
+  default from: "Ryan@artstore.com"
 
   def notify_order_placed(order)
     

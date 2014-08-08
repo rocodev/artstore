@@ -1,0 +1,14 @@
+defaults: &defaults
+  stripe:
+    secret_key: your stripe secret key
+
+development:
+  <<: *defaults
+  mailgun:
+    password: your mailgun password
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
