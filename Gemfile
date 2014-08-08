@@ -67,11 +67,15 @@ gem 'sidekiq', '~> 3.2.1'
 gem 'sinatra', require: false
 gem 'slim'
 
+#add for capistrano
+gem 'capistrano', '~> 3.2.0'
+gem 'capistrano-ext'
+
+gem 'mysql2'
 
 group :developmet, :test do
 	gem 'guard-livereload'
 	gem 'annotate', '~> 2.6.5'
-	gem 'mysql2'
 	gem 'letter_opener', '~> 1.2.0'
 end
 
