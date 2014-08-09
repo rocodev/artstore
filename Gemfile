@@ -69,7 +69,9 @@ gem 'slim'
 
 #add for capistrano
 gem 'capistrano', '~> 3.2.0'
-gem 'capistrano-ext'
+gem 'capistrano-bundler', '~> 1.1.2'
+gem 'capistrano-rails', '~> 1.1.1'
+gem 'capistrano-rvm', github: "capistrano/rvm"
 
 gem 'mysql2'
 
