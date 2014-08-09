@@ -41,8 +41,7 @@ gem 'spring',        group: :development
 
 #customize gem
 #gem 'pry', '~> 0.10.0'
-gem 'pry-rails'
-gem 'pry-plus'
+
 gem "simple_form", "3.1.0rc1"
 gem 'bootstrap-sass', '~> 3.2.0.0'
 #The bootstrap-sass-rails gem is deprecated starting with version 3.1.0.0.
@@ -76,6 +75,8 @@ gem 'capistrano-rvm', github: "capistrano/rvm"
 gem 'mysql2'
 
 group :developmet, :test do
+	#gem 'pry-rails'
+	#gem 'pry-plus'
 	gem 'guard-livereload'
 	gem 'annotate', '~> 2.6.5'
 	gem 'letter_opener', '~> 1.2.0'
