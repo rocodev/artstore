@@ -2,6 +2,7 @@ require 'capistrano/console'
 #require 'capistrano/rails/migrations'
 #require 'capistrano/rails/assets'
 
+
 # Load DSL and Setup Up Stages
 require 'capistrano/setup'
 
@@ -10,6 +11,12 @@ require 'capistrano/deploy'
 
 require 'capistrano/bundler'
 require 'capistrano/rails'
+
+#add for sidekiq
+#you should care about the order of require
+require 'capistrano/sidekiq'
+require 'capistrano/sidekiq/monit' #to require monit tasks # Only for capistrano3
+
 
 require 'capistrano/rvm'
 set :rvm_type, :user

@@ -11,6 +11,9 @@ set :deploy_to, '/home/ryan/artstore'
 set :linked_files, %w{config/database.yml config/settings.yml config/secrets.yml}
 set :linked_dirs, %w{bin log tmp/pids tmp/cache tmp/sockets vendor/bundle public/system}
 
+#add for sidekiq
+set :pty,  false
+
 namespace :deploy do
 
   desc 'Restart application'
