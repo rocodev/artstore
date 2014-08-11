@@ -66,7 +66,11 @@ gem 'sidekiq', '~> 3.2.1'
 gem 'sinatra', require: false
 gem 'slim'
 
-
+#add for capistrano
+gem 'capistrano', '~> 3.2.0'
+gem 'capistrano-bundler', '~> 1.1.2'
+gem 'capistrano-rails', '~> 1.1.1'
+gem 'capistrano-rvm', github: "capistrano/rvm"
 
 gem 'mysql2'
 
@@ -76,12 +80,6 @@ group :developmet, :test do
 	gem 'guard-livereload'
 	gem 'annotate', '~> 2.6.5'
 	gem 'letter_opener', '~> 1.2.0'
-
-	#add for capistrano
-	gem 'capistrano', '~> 3.2.0'
-	gem 'capistrano-bundler', '~> 1.1.2'
-	gem 'capistrano-rails', '~> 1.1.1'
-	gem 'capistrano-rvm', github: "capistrano/rvm"
 
 end
 
