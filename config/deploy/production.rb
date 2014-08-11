@@ -17,6 +17,7 @@
 
 #server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
 
+require 'capistrano/console'
 
 set :stage, :production
 
