@@ -2,6 +2,7 @@
 lock '3.2.1'
 
 set :application, 'artstore'
+set :scm, :git
 set :repo_url, 'git@github.com:ryanyangtw/artstore.git'
 set :branch, "master"
 
@@ -22,8 +23,27 @@ namespace :deploy do
   after :publishing, 'deploy:restart'
   after :finishing, 'deploy:cleanup'
 
+  after :restart, :clear_cache do
+    on roles(:web), in: :groups, limit: 3, wait: 10 do
+      # Here we can do anything such as:
+      # within release_path do
+      #   execute :rake, 'cache:clear'
+      # end
+    end
+  end
 
 end
+
+# check logs
+namespace :logs do
+  desc "tail rails logs" 
+  task :tail_rails do
+    on roles(:app) do
+      execute "tail -f #{shared_path}/log/#{fetch(:rails_env)}.log"
+    end
+  end
+end
+
 
 
 
@@ -58,25 +78,25 @@ end
 # Default value for keep_releases is 5
 # set :keep_releases, 5
 
-namespace :deploy do
-
-  desc 'Restart application'
-  task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
-      # Your restart mechanism here, for example:
-      # execute :touch, release_path.join('tmp/restart.txt')
-    end
-  end
-
-  after :publishing, :restart
-
-  after :restart, :clear_cache do
-    on roles(:web), in: :groups, limit: 3, wait: 10 do
-      # Here we can do anything such as:
-      # within release_path do
-      #   execute :rake, 'cache:clear'
-      # end
-    end
-  end
-
-end
+#namespace :deploy do
+#
+#  desc 'Restart application'
+#  task :restart do
+#    on roles(:app), in: :sequence, wait: 5 do
+#      # Your restart mechanism here, for example:
+#      # execute :touch, release_path.join('tmp/restart.txt')
+#    end
+#  end
+#
+#  after :publishing, :restart
+#
+#  after :restart, :clear_cache do
+#    on roles(:web), in: :groups, limit: 3, wait: 10 do
+#      # Here we can do anything such as:
+#      # within release_path do
+#      #   execute :rake, 'cache:clear'
+#      # end
+#    end
+#  end
+#
+#end

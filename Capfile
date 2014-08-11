@@ -1,4 +1,7 @@
 require 'capistrano/console'
+#require 'capistrano/rails/migrations'
+#require 'capistrano/rails/assets'
+
 # Load DSL and Setup Up Stages
 require 'capistrano/setup'
 
