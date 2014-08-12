@@ -13,7 +13,7 @@
         </li>
       </ul>
 
-
+      <% @q = Product.ransack(params[:q])%>
       <%= render :partial=>'common/ransack_form', :locals=>{:q => @q}%>
       <!--   
       <form class="navbar-form navbar-left" action="#" role="search">

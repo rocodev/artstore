@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   #It's not a good solution to solve the problem about ransack
-  before_action :declare_ransack
+  #before_action :declare_ransack
 
 
   def admin_required
@@ -28,10 +28,11 @@ class ApplicationController < ActionController::Base
   	cart
   end
 
-  private 
-    def declare_ransack
-      @q = Product.ransack(params[:q])
-    end
+# move declartion to view
+#  private 
+#    def declare_ransack
+#      @q = Product.ransack(params[:q])
+#    end
 
 
 end

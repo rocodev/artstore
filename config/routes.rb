@@ -21,7 +21,8 @@ Rails.application.routes.draw do
 
   resources :products do
     collection do
-      post :search, :to => "products#index"  
+      #post :search, :to => "products#index"  
+      post :search
     end
   end
 
