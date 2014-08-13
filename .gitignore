@@ -19,3 +19,5 @@ config/settings.yml
 config/database.yml
 config/secrets.yml
 public/uploads
+public/assets
+

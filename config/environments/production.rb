@@ -56,6 +56,7 @@ Rails.application.configure do
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.action_controller.asset_host = "http://assets.example.com"
+  config.action_controller.asset_host = “http://assets%d.inkryan.com"
 
   # Precompile additional assets.
   # application.js, application.css, and all non-JS/CSS in app/assets folder are already added.
@@ -84,7 +85,7 @@ Rails.application.configure do
 
   #add for mailgun
   config.action_mailer.default_url_options = { host: 'http://106.185.32.71/' }
-  
+
   config.action_mailer.smtp_settings = {
     :port             => 587,
     :address          => 'smtp.mailgun.org',

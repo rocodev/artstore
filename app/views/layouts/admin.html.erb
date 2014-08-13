@@ -4,9 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <%= stylesheet_link_tag "application" %>
-  <%= javascript_include_tag "application" %>
+
   <%= csrf_meta_tags %>
-  <title> ArtStore </title>
+  
+  <%= render_page_title_tag %>
+  <%= render_page_description_meta_tag %>
+  <%= render_page_keywords_meta_tag %>
+  <%= render_page_image_link_tag %>
+  <meta name="author" content="Ryan Yang">
 
 </head>
 <body>
@@ -38,4 +43,6 @@
 
   </div>
 </body>
+
+  <%= javascript_include_tag "application" %>
 </html>

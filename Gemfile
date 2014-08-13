@@ -75,14 +75,25 @@ gem 'capistrano-sidekiq' , github: 'seuros/capistrano-sidekiq'
 
 gem 'mysql2'
 
-group :developmet, :test do
-	#gem 'pry-rails'
-	#gem 'pry-plus'
+#add for seo
+gem 'seo_helper', '~> 1.0', :git => 'git://github.com/techbang/seo_helper.git'
+gem 'sitemap_generator'
+
+group :development, :test do
+	gem 'pry-rails'
+	gem 'pry-plus'
+	gem 'meta_request'
+  gem 'better_errors'
+  gem "binding_of_caller"
 	gem 'guard-livereload'
 	gem 'annotate', '~> 2.6.5'
 	gem 'letter_opener', '~> 1.2.0'
 
 end
+
+
+
+
 
 
 

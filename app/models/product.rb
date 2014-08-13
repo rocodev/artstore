@@ -9,9 +9,9 @@
 #  created_at  :datetime
 #  updated_at  :datetime
 #  price       :float            default(0.0)
+#  created_on  :date
+#  updated_on  :date
 #
-
-
 
 class Product < ActiveRecord::Base
 	has_many :photos, :dependent => :delete_all

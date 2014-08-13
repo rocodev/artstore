@@ -11,8 +11,13 @@ class ProductsController < ApplicationController
 
 
 	def show
+
 		@product = Product.find(params[:id])
 		@photos = @product.photos
+		set_page_title @product.title
+		set_page_description @product.description.truncate(100)
+    set_page_keywords @product.title 
+    set_page_image @product.default_photo.image.url
 	end
 
 	def search
