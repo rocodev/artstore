@@ -1,8 +1,8 @@
 require 'capistrano/console'
 
 # this is not set for default
-require 'capistrano/rails/migrations'
-require 'capistrano/rails/assets'
+#require 'capistrano/rails/migrations'
+#require 'capistrano/rails/assets'
 
 
 # Load DSL and Setup Up Stages
