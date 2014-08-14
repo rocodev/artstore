@@ -27,6 +27,12 @@ GIT
       sidekiq
 
 GIT
+  remote: git://github.com/techbang/open_graph_helper.git
+  revision: b46e788e90ccab3aa4df5a9fd401b616812801f0
+  specs:
+    open_graph_helper (0.2.0)
+
+GIT
   remote: git://github.com/techbang/seo_helper.git
   revision: 5a479c8a3213128a4c95c3068b7075a70f635969
   specs:
@@ -352,6 +358,7 @@ DEPENDENCIES
   meta_request
   mini_magick (~> 3.7.0)
   mysql2
+  open_graph_helper!
   pry-plus
   pry-rails
   rails (= 4.1.0)

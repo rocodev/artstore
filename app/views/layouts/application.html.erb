@@ -13,9 +13,18 @@
 	<%= render_page_keywords_meta_tag %>
 	<%= render_page_image_link_tag %>
 	<meta name="author" content="Ryan Yang">
+
+
+	<%=og_title("The Rock")%>
+	<%=og_type("movie") %>
+	<%=og_url("http://www.imdb.com/title/tt0117500/")%>
+	<%=og_image("http://placehold.it/300X300&text=No%20Pic")%>
+	<%=og_site_name("IMDb")%>
+	<%=og_description("Lorem Ipsum ...")%>
+
 </head>
 <body>
-
+<div id="fb-root"></div>
 
 
 <div class="container">
@@ -25,6 +34,7 @@
 	<%#flash.each do |name , msg|%>
 		<%#= content_tag(:div , msg,class: "alert alert-info") %>
 	<%#end%>
+
 	<%= yield %>
 </div>
 

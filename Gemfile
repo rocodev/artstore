@@ -79,6 +79,9 @@ gem 'mysql2'
 gem 'seo_helper', '~> 1.0', :git => 'git://github.com/techbang/seo_helper.git'
 gem 'sitemap_generator'
 
+#fb open graph
+gem 'open_graph_helper', :github => 'techbang/open_graph_helper'
+
 group :development, :test do
 	gem 'pry-rails'
 	gem 'pry-plus'
