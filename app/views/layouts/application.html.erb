@@ -13,7 +13,8 @@
 	<%= render_page_keywords_meta_tag %>
 	<%#= render_page_image_link_tag %>
 
-	<%= tag(:link , :href=>image_path('logo-artstore.png'), :rel=>"image_src") %>
+	<%#= tag(:link , :href=>image_path('logo-artstore.png'), :rel=>"image_src") %>
+	<%= image_src_link_tag(image_path('logo-artstore.png')) %>
 	<meta name="author" content="Ryan Yang">
 
 
