@@ -11,14 +11,16 @@
   <%= render_page_title_tag %>
   <%= render_page_description_meta_tag %>
 	<%= render_page_keywords_meta_tag %>
-	<%= render_page_image_link_tag %>
+	<%#= render_page_image_link_tag %>
+
+	<%= tag(:link , :href=>image_path('logo-artstore.png'), :rel=>"image_src") %>
 	<meta name="author" content="Ryan Yang">
 
 
 	<%=og_title("The Rock")%>
 	<%=og_type("movie") %>
 	<%=og_url("http://www.imdb.com/title/tt0117500/")%>
-	<%=og_image("http://placehold.it/300X300&text=No%20Pic")%>
+	<%#=og_image("http://placehold.it/300X300&text=No%20Pic")%>
 	<%=og_site_name("IMDb")%>
 	<%=og_description("Lorem Ipsum ...")%>
 
