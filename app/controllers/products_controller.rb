@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
 		#@q = Product.ransack(params[:q])
 		#@products = @q.result(distinct: true)
 		
-  	fresh_when last_modified: @products.maximum(:updated_at) , public: true  
+  	#fresh_when last_modified: @products.maximum(:updated_at) , public: true  
 
 	end
 
