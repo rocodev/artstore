@@ -1,0 +1,50 @@
+<script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+ 
+<script type="text/javascript">
+  Stripe.setPublishableKey('<%=Settings.stripe.public_key%>');
+</script>
+ 
+ <%#= render_stripe_public_key %>
+ 
+ 
+<%= form_tag order_card_charges_path(@order.token), :id => "payment-form", :class => "form form-horizontal" do %>
+ 
+  <span class="payment-errors"></span>
+ 
+  <div class="form-group">
+    <div class="col-sm-3">
+      <label for="Card Number">Card Number</label>
+      <input class="form-control" type="text" size="20" data-stripe="number"/>
+    </div>
+  </div>
+ 
+  <div class="form-group">
+    <div class="col-sm-1">
+      <label for="CVS">CVC</label>
+      <input class="form-control" type="text" size="4" data-stripe="cvc"/>
+    </div>
+  </div>
+ 
+<div class="form-group">
+ 
+  <div class="group">
+    <div class="col-sm-2 ">
+      <label > Expiration (MM/YYYY) </label>
+    </div>
+  </div>
+ 
+  <div class="group">
+   <div class="col-sm-1">
+     <input class="form-control" type="text" size="2" data-stripe="exp-month"/>
+   </div>
+   <div class="col-sm-2">
+    <input class="form-control" type="text" size="4" data-stripe="exp-year"/>
+  </div>
+</div>
+ 
+</div>
+ 
+<button type="submit" class="btn btn-default">Submit</button>
+ 
+ 
+<% end %>

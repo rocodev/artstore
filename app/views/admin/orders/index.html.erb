@@ -1,0 +1,52 @@
+
+    <h2> 訂單明細 </h2>
+
+    <table class="table table-hover table-bordered">
+      <thead>
+        <tr>
+          <th>訂單編號</th>
+          <th>生成時間</th>
+          <th>訂單金額</th>        
+          <th width="50%">訂單狀態</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @orders.each do |order| %>
+          <%= render_admin_order_table_row(order)%>  
+          <!--<tr>-->
+
+            <td><%= render_admin_order_link(order)%></td>
+           <td> <%= render_order_created_time(order) %> </td>
+
+            <td> <%= render_order_total(order) %> </td>            
+            <!--<td> <%#= render_order_state(order) %> </td>-->
+
+            <%=content_tag :td, :class=> "td_aasm_state" , :data_nowstate => order.aasm_state do%>
+
+              <div class="pagination">
+                <ul> 
+                  <li data_state="order_placed"><a >已下訂</a></li>
+
+                  <li data_state="paid"><a >已付款</a></li>
+
+                  <li data_state="shipping"><a >出貨中</a></li>
+
+                  <li data_state="shipped"><a >到貨</a></li>
+  
+                  <li class="li_failed_order" data_state="order_cancelled"><a>取消訂單</a></li>
+
+                  <li class="li_failed_order" data_state="good_returned"><a>退貨</a></li>
+                </ul>
+              </div>
+    
+              <%= simple_form_for order, :url => admin_order_path(order.token), :html=>{:class=>"hide"} do |f| %>
+                <%= f.input :aasm_state%>
+              <%end%>
+            <%end%>
+       
+          </tr>      
+        <% end %>
+      </tbody>
+    </table>
+

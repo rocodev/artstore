@@ -2,13 +2,46 @@
 <html>
 <head>
   <title>Artstore</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+
+  <%= csrf_meta_tags unless response.cache_control[:public]%>
+  
+  <%= render_page_title_tag %>
+  <%= render_page_description_meta_tag %>
+	<%= render_page_keywords_meta_tag %>
+	<%#= render_page_image_link_tag %>
+
+	<%#= tag(:link , :href=>image_path('logo-artstore.png'), :rel=>"image_src") %>
+	<%= image_src_link_tag(image_path('logo-artstore.png')) %>
+	<meta name="author" content="Ryan Yang">
+
+
+	<%=og_title("The Rock")%>
+	<%=og_type("movie") %>
+	<%=og_url(image_url('logo-artstore.png'))%>
+	<%#=og_image("http://placehold.it/300X300&text=No%20Pic")%>
+	<%=og_site_name("IMDb")%>
+	<%=og_description("Lorem Ipsum ...")%>
+
 </head>
 <body>
 
-<%= yield %>
+
+<div class="container">
+	<%= render(:partial=>'common/navbar')%>
+	<%=notice_message%>
+
+	<%#flash.each do |name , msg|%>
+		<%#= content_tag(:div , msg,class: "alert alert-info") %>
+	<%#end%>
+
+	<%= yield %>
+</div>
+
+ <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+ <%= yield :carts_index_customize_jquery%>
 
 </body>
 </html>

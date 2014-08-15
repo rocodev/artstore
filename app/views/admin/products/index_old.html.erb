@@ -1,0 +1,32 @@
+
+<h1>Index</h1>
+
+
+<div class="row">
+
+			 <% @products.each do |product|%>
+			 <div class="col-sm-3 col-md-3">
+
+			    <div class="img-box panel panel-default">
+			      
+			      <%= link_to(admin_product_path(product)) do%>
+
+			     		<%= image_tag(product.photos.first.image_url, :class=>"img-rounded") if !product.photos.first.blank? %>
+			     	
+
+				      <div class="panel-body">
+				        <p><%= product.title%></p>
+				    	</div>
+			    	<%end%>
+			    </div>
+			 </div>
+			 <% end %>
+
+</div>
+
+
+<div class="center">
+
+<%= will_paginate @products, renderer: BootstrapPagination::Rails %>
+</div>
+

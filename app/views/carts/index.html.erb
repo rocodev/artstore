@@ -1,0 +1,69 @@
+<% content_for :carts_index_customize_jquery do%>
+ <%= javascript_include_tag 'carts_index' %>
+<% end %>
+
+
+ <div class="row">
+   <div class="col-md-12">
+
+    <h2> 購物車  <%= link_to "清空購物車" , remove_all_carts_path , :method => :delete, :class=> "btn btn-primary btn-lg btn-danger pull-right"%> </h2>
+
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>商品資訊</th>
+          <th>商品名稱</th>
+          <th>剩餘數量</th>
+          <th>單價</th>
+          <th>數量</th>
+          <th>刪除</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% current_cart.cart_items.each do |cart_item| %>
+        <tr>
+          <td><%= render_product_photo(cart_item.product.default_photo)%></td>
+
+            <td> 
+              
+
+              <%= link_to(cart_item.product.title, admin_product_path(cart_item.product)) %>
+            </td>
+            <td> <%= cart_item.product.quantity %> </td>
+            <td> <%= cart_item.product.price %> </td>
+
+            <td>
+
+              <div class="form-group">
+                <%= simple_form_for cart_item, :remote => true, :url => cart_item_path(cart_item), :html=>{:class=>"hide"} do |f| %>
+                <%= f.input :quantity %>
+                <%end%>
+
+                <%=text_field_tag( "spinner", 1 ,:id => "spinner-01", :class=> "spinner" , :type=>"text", :data_max => cart_item.product.quantity , :data_start => cart_item.quantity)%>
+              </div>
+
+            </td>
+
+            <td> <%= link_to 'delete', remove_from_cart_cart_item_path(cart_item), :method => :delete ,  :class=> "btn btn-primary btn-lg btn-danger"%></td>
+          </tr>
+          <% end %>
+
+        </tbody>
+      </table>
+
+      <div class="total group">
+        <span class="pull-right">
+           總計 <span class="span_price"><%= render_cart_total_price(current_cart) %></span> NTD 
+        </span>
+      </div>
+  
+      <hr>
+      <div class="checkout">
+          <%= link_to("確認結賬", checkout_carts_path , :method => :post , :class => "btn btn-primary btn-lg pull-right") %>
+      </div>
+
+
+    </div>
+
+
+  </div>

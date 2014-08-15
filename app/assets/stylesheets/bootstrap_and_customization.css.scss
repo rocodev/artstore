@@ -1,0 +1,51 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
+
+
+
+
+.center {
+	text-align: center;
+}
+
+/* why does this css not work? */
+.img-box img {
+  width: 100%;
+  height: 261px;
+}
+
+
+.carousel-inner .img-box img{
+  width: 100%;
+  height: 261px;
+}
+
+
+
+
+.form-img-box img{
+  width: 40px;
+  height: 40px;
+
+}
+
+
+.form-inline div,a{
+	display: inline-block;
+}
+
+
+.pagination ul li.active.li_failed_order > a, .pagination ul li.active.li_failed_order > span{
+	background-color: #ec7063;
+}
+
+.pagination ul li.li_failed_order > a:hover, .pagination ul li.li_failed_order > span:hover, .pagination ul li.li_failed_order > a:focus, .pagination ul li.li_failed_order > span:focus{
+	background-color: #ec7063;
+}
+
+
+div.div-fb{
+  padding-top: 20px;
+}
+
+

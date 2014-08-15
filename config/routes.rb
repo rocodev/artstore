@@ -1,4 +1,66 @@
 Rails.application.routes.draw do
+
+  #add for sidekiq dashboard
+  require 'sidekiq/web'
+  mount Sidekiq::Web, at: "/sidekiq"
+
+  devise_for :users
+  namespace :admin do
+    resources :products do
+      resources :photos
+    end
+    resources :orders do
+       member do 
+        post :cancel
+        post :ship
+        post :shipped
+        post :return
+      end
+    end
+  end
+
+  resources :products do
+    collection do
+      #post :search, :to => "products#index"  
+      post :search
+    end
+  end
+
+  resources :carts do
+    collection do
+      delete :remove_all
+      post :checkout
+    end
+  end
+
+  resources :orders do
+    member do
+      get :pay_with_credit_card
+    end
+    resources :card_charges
+  end
+
+  resources :cart_items do
+    member do
+      post :add_to_cart
+      delete :remove_from_cart
+    end
+  end
+
+  namespace :account do
+    resources :orders do
+      member do
+        post :cancel
+        post :return
+      end
+    end
+  end
+
+
+  root :to => "products#index"
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
