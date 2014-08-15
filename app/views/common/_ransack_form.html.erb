@@ -1,4 +1,3 @@
-  <%@q = Product.ransack(params[:q])%>
   <%= search_form_for q ,:url=> search_products_path, :method=> :post,:class=>"navbar-form navbar-left", :role=>"search" do |f| %>
     <div class="form-group">
         <div class="input-group">

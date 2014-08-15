@@ -5,7 +5,9 @@ class ProductsController < ApplicationController
 		#@q = Product.search(params[:q])
 
 		#@q = Product.ransack(params[:q])
-		#@products = @q.result(distinct: true)  
+		#@products = @q.result(distinct: true)
+		
+  	fresh_when last_modified: @products.maximum(:updated_at) , public: true  
 
 	end
 
@@ -18,6 +20,7 @@ class ProductsController < ApplicationController
 		set_page_description @product.description.truncate(100)
     set_page_keywords @product.title 
     #set_page_image @product.default_photo.image.url
+    #fresh_when(:etag=> @product, last_modified: @product.updated_at, public: true)
 	end
 
 	def search

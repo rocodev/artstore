@@ -84,7 +84,8 @@ Rails.application.configure do
 
 
   #add for mailgun
-  config.action_mailer.default_url_options = { host: 'http://106.185.32.71/' }
+  config.action_mailer.default_url_options = { host: 'http://inktyan.com
+    ' }
 
   config.action_mailer.smtp_settings = {
     :port             => 587,

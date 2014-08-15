@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 
-  <%= csrf_meta_tags %>
+  <%= csrf_meta_tags unless response.cache_control[:public]%>
   
   <%= render_page_title_tag %>
   <%= render_page_description_meta_tag %>

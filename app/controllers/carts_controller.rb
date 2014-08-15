@@ -2,6 +2,7 @@ class CartsController < ApplicationController
 
 	before_action :authenticate_user!, :only=>[:checkout]
 	def index
+		#fresh_when(:etag=> current_cart, last_modified: current_cart.updated_at)
 	end
 
 	def checkout
